@@ -46,7 +46,7 @@ export function HeroSection() {
 
           <motion.div
             variants={spotlightMotion}
-            className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4"
+            className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 lg:items-center"
             aria-label="Ações principais"
           >
             <a

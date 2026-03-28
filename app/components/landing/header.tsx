@@ -25,12 +25,12 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 lg:min-w-[220px] lg:justify-end">
           <a
             href={contactLinks.instagram.href}
             target="_blank"
             rel="noreferrer"
-            className="hidden text-sm text-stone-300 hover:text-stone-100 xl:inline-flex"
+            className="hidden text-sm text-stone-300 hover:text-stone-100 lg:inline-flex"
           >
             Instagram
           </a>
