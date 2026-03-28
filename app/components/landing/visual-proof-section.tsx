@@ -7,6 +7,31 @@ import { SectionShell } from "./section-shell";
 
 export function VisualProofSection() {
   const prefersReducedMotion = useReducedMotion();
+  const premiumEase = [0.22, 1, 0.36, 1] as const;
+  const gridVariants = prefersReducedMotion
+    ? undefined
+    : {
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.08,
+            delayChildren: 0.05,
+          },
+        },
+      };
+  const cardVariants = prefersReducedMotion
+    ? undefined
+    : {
+        hidden: { opacity: 0, y: 18 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.65,
+            ease: premiumEase,
+          },
+        },
+      };
 
   return (
     <SectionShell
@@ -14,7 +39,13 @@ export function VisualProofSection() {
       title="Imagens que reforçam presença, escala e valor percebido."
       description="A galeria apresenta recortes reais da atuação da Amplifica em eventos, com foco em atmosfera, operação, marca e força institucional."
     >
-      <div className="grid auto-rows-[190px] gap-4 sm:auto-rows-[220px] md:grid-cols-2 xl:grid-cols-4">
+      <motion.div
+        initial={prefersReducedMotion ? undefined : "hidden"}
+        whileInView={prefersReducedMotion ? undefined : "visible"}
+        viewport={{ once: true, amount: 0.14 }}
+        variants={gridVariants}
+        className="grid auto-rows-[190px] gap-4 sm:auto-rows-[220px] md:grid-cols-2 xl:grid-cols-4"
+      >
         {visualProofItems.map((item, index) => {
           const featured = index === 0;
           const tall = index === 1;
@@ -22,18 +53,7 @@ export function VisualProofSection() {
           return (
             <motion.article
               key={item.title}
-              initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 26 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={
-                prefersReducedMotion
-                  ? { duration: 0 }
-                  : {
-                      duration: 0.7,
-                      delay: index * 0.08,
-                      ease: [0.22, 1, 0.36, 1],
-                    }
-              }
+              variants={cardVariants}
               className={[
                 "group relative overflow-hidden rounded-[1.7rem] border border-white/10",
                 "bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]",
@@ -48,16 +68,11 @@ export function VisualProofSection() {
                 fill
                 sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, (max-width: 1535px) 50vw, 25vw"
                 priority={index === 0}
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] opacity-40 group-hover:opacity-90"
+                className="object-cover opacity-40 transition-transform duration-700 ease-out group-hover:scale-[1.03] group-hover:opacity-90"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.06),rgba(5,5,5,0.34)_42%,rgba(5,5,5,0.82)_100%)]" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.18),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.18))]" />
-              <div
-                className={[
-                  "absolute inset-x-3 bottom-3 top-14 rounded-[1.35rem] bg-transparent sm:inset-x-4 sm:bottom-4 sm:top-16 sm:rounded-[1.6rem]",
-                  featured ? "" : "",
-                ].join(" ")}
-              />
+              <div className="absolute inset-x-3 bottom-3 top-14 rounded-[1.35rem] bg-transparent sm:inset-x-4 sm:bottom-4 sm:top-16 sm:rounded-[1.6rem]" />
               <div className="relative flex h-full flex-col justify-between p-5 sm:p-6">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-[10px] uppercase tracking-[0.26em] text-stone-300/80 sm:text-[11px] sm:tracking-[0.3em]">
@@ -82,7 +97,7 @@ export function VisualProofSection() {
             </motion.article>
           );
         })}
-      </div>
+      </motion.div>
     </SectionShell>
   );
 }
