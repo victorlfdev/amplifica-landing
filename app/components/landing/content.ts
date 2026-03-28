@@ -115,7 +115,7 @@ export const visualProofItems: VisualProofItem[] = [
     description:
       "Material captado para seguir ativo em campanhas, redes sociais, propostas e comunicação institucional.",
     highlight: "Ativo de marca de longo prazo",
-    imageSrc: "/images/Galeria04.webp",
+    imageSrc: "/images/PosEvento.webp",
     imageAlt: "Conteúdo visual de marca captado durante evento.",
     size: "feature",
     align: "center",
@@ -126,7 +126,7 @@ export const visualProofItems: VisualProofItem[] = [
     description:
       "Recortes de bastidores que mostram domínio operacional sem roubar a atenção da experiência principal.",
     highlight: "Cobertura viva e controlada",
-    imageSrc: "/images/Galeria03.webp",
+    imageSrc: "/images/Galeria04.webp",
     imageAlt: "Bastidores de operação audiovisual mostrando equipe e equipamentos.",
     size: "medium",
     align: "bottom",
@@ -137,7 +137,7 @@ export const visualProofItems: VisualProofItem[] = [
     description:
       "Uma entrega pensada para converter presença física em memória institucional, autoridade e recorrência.",
     highlight: "Resultados além do dia do evento",
-    imageSrc: "/images/Galeria02.webp",
+    imageSrc: "/images/ProjetoDestaque.webp",
     imageAlt: "Projeto em destaque com ambiente institucional e iluminação cênica.",
     size: "compact",
     align: "top",
