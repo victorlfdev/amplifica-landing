@@ -20,10 +20,14 @@ export type AudienceItem = {
 };
 
 export type VisualProofItem = {
+  label: string;
   title: string;
   description: string;
+  highlight: string;
   imageSrc: string;
   imageAlt: string;
+  size: "compact" | "medium" | "feature";
+  align?: "top" | "center" | "bottom";
 };
 
 export type ContactLink = {
@@ -73,28 +77,70 @@ export const heroHighlights: HighlightItem[] = [
 
 export const visualProofItems: VisualProofItem[] = [
   {
-    title: "Cobertura de eventos",
-    description: "Capítulos visuais pensados para registrar presença, narrativa e relevância.",
+    label: "Evento principal",
+    title: "Cobertura pensada para presença e escala",
+    description:
+      "Captação orientada para palco, público e atmosfera, com leitura clara do que sustenta percepção de valor.",
+    highlight: "Narrativa visual do evento",
     imageSrc: "/images/Galeria01.webp",
-    imageAlt: "Cobertura audiovisual de evento com palco e público.",
+    imageAlt: "Cobertura audiovisual de evento com palco iluminado e público presente.",
+    size: "feature",
+    align: "center",
   },
   {
-    title: "Ambiente institucional",
-    description: "Imagem, atmosfera e estrutura alinhadas a marcas que precisam parecer sólidas.",
+    label: "Presença institucional",
+    title: "Ambientes que comunicam solidez",
+    description:
+      "Arquitetura visual, recepção e detalhes de marca registrados para reforçar consistência institucional.",
+    highlight: "Percepção premium no detalhe",
     imageSrc: "/images/Galeria02.webp",
     imageAlt: "Ambiente institucional de evento registrado pela Amplifica.",
+    size: "medium",
+    align: "center",
   },
   {
-    title: "Equipe em ação",
-    description: "Operação técnica conduzida com precisão, discrição e padrão profissional.",
+    label: "Operação técnica",
+    title: "Bastidores conduzidos com precisão",
+    description:
+      "Equipe, equipamentos e timing trabalhando com discrição para sustentar qualidade e fluidez na entrega.",
+    highlight: "Execução com padrão profissional",
     imageSrc: "/images/Galeria03.webp",
     imageAlt: "Equipe em ação durante operação audiovisual de evento.",
+    size: "compact",
+    align: "center",
   },
   {
-    title: "Conteúdo de marca",
-    description: "Imagens feitas para continuar gerando valor muito além do dia do evento.",
+    label: "Pós-evento",
+    title: "Conteúdo que continua depois do palco",
+    description:
+      "Material captado para seguir ativo em campanhas, redes sociais, propostas e comunicação institucional.",
+    highlight: "Ativo de marca de longo prazo",
     imageSrc: "/images/Galeria04.webp",
     imageAlt: "Conteúdo visual de marca captado durante evento.",
+    size: "feature",
+    align: "center",
+  },
+  {
+    label: "Ritmo de produção",
+    title: "Movimento, coordenação e resposta rápida",
+    description:
+      "Recortes de bastidores que mostram domínio operacional sem roubar a atenção da experiência principal.",
+    highlight: "Cobertura viva e controlada",
+    imageSrc: "/images/Galeria03.webp",
+    imageAlt: "Bastidores de operação audiovisual mostrando equipe e equipamentos.",
+    size: "medium",
+    align: "bottom",
+  },
+  {
+    label: "Projeto em destaque",
+    title: "Cada projeto vira repertório visual da marca",
+    description:
+      "Uma entrega pensada para converter presença física em memória institucional, autoridade e recorrência.",
+    highlight: "Resultados além do dia do evento",
+    imageSrc: "/images/Galeria02.webp",
+    imageAlt: "Projeto em destaque com ambiente institucional e iluminação cênica.",
+    size: "compact",
+    align: "top",
   },
 ];
 
