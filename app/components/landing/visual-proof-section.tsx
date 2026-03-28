@@ -46,7 +46,8 @@ export function VisualProofSection() {
                 src={item.imageSrc}
                 alt={item.imageAlt}
                 fill
-                sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
+                sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, (max-width: 1535px) 50vw, 25vw"
+                priority={index === 0}
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.06),rgba(5,5,5,0.34)_42%,rgba(5,5,5,0.82)_100%)]" />

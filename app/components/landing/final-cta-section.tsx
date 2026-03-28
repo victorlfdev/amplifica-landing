@@ -22,6 +22,7 @@ export function FinalCtaSection() {
                 href={contactLinks.whatsapp.href}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Falar com a Amplifica no WhatsApp"
                 className="inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3.5 text-sm font-semibold text-stone-950 shadow-[0_10px_30px_rgba(213,185,138,0.16)] hover:-translate-y-0.5 hover:brightness-105 sm:w-auto sm:px-6"
               >
                 Falar no WhatsApp
@@ -30,12 +31,14 @@ export function FinalCtaSection() {
                 href={contactLinks.instagram.href}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Abrir Instagram da Amplifica"
                 className="inline-flex w-full items-center justify-center rounded-full border border-white/12 bg-white/5 px-5 py-3.5 text-sm font-semibold text-stone-100 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/8 sm:w-auto sm:px-6"
               >
                 Ver Instagram
               </a>
               <a
                 href={contactLinks.email.href}
+                aria-label="Enviar e-mail para a Amplifica"
                 className="inline-flex w-full items-center justify-center rounded-full border border-white/12 bg-white/5 px-5 py-3.5 text-sm font-semibold text-stone-100 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/8 sm:w-auto sm:px-6"
               >
                 Enviar e-mail

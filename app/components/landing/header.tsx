@@ -30,6 +30,7 @@ export function Header() {
             href={contactLinks.instagram.href}
             target="_blank"
             rel="noreferrer"
+            aria-label="Abrir Instagram da Amplifica"
             className="hidden text-sm text-stone-300 hover:text-stone-100 lg:inline-flex"
           >
             Instagram
@@ -38,6 +39,7 @@ export function Header() {
             href={contactLinks.whatsapp.href}
             target="_blank"
             rel="noreferrer"
+            aria-label="Falar com a Amplifica no WhatsApp"
             className="shrink-0 rounded-full border border-white/12 bg-white/4 px-3.5 py-2 text-xs font-medium text-stone-100 hover:border-[var(--accent)]/50 hover:bg-white/8 hover:text-white sm:px-5 sm:py-2.5 sm:text-sm"
           >
             WhatsApp

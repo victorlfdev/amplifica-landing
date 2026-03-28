@@ -16,17 +16,33 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-2 text-sm text-stone-300">
-          <a href={contactLinks.whatsapp.href} target="_blank" rel="noreferrer" className="hover:text-stone-100">
+        <nav aria-label="Canais de contato" className="flex flex-col gap-2 text-sm text-stone-300">
+          <a
+            href={contactLinks.whatsapp.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Falar com a Amplifica no WhatsApp"
+            className="hover:text-stone-100"
+          >
             WhatsApp
           </a>
-          <a href={contactLinks.instagram.href} target="_blank" rel="noreferrer" className="hover:text-stone-100">
+          <a
+            href={contactLinks.instagram.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Abrir Instagram da Amplifica"
+            className="hover:text-stone-100"
+          >
             Instagram
           </a>
-          <a href={contactLinks.email.href} className="hover:text-stone-100">
+          <a
+            href={contactLinks.email.href}
+            aria-label="Enviar e-mail para a Amplifica"
+            className="hover:text-stone-100"
+          >
             amplifica@usd21.org
           </a>
-        </div>
+        </nav>
       </div>
     </footer>
   );
