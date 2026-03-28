@@ -122,8 +122,8 @@ function PortfolioColumn({
 
             <div className="relative flex h-full flex-col justify-between p-5 sm:p-6">
               <div className="flex items-start justify-between gap-4">
-                <div className="space-y-3 transition-opacity duration-500 group-hover:opacity-80">
-                  <span className="inline-flex rounded-full border border-white/12 bg-black/25 px-3 py-1 text-[10px] uppercase tracking-[0.26em] text-stone-200/80 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-70 sm:text-[11px]">
+                <div className="space-y-3 transition-opacity duration-500 group-hover:opacity-50">
+                  <span className="inline-flex rounded-full border border-white/12 bg-black/25 px-3 py-1 text-[10px] uppercase tracking-[0.26em] text-stone-200/80 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-50 sm:text-[11px]">
                     {item.label}
                   </span>
                   <p className="max-w-[14rem] text-[11px] uppercase tracking-[0.26em] text-[var(--accent)]/90 transition-opacity duration-500 group-hover:opacity-65 sm:text-xs">
@@ -137,7 +137,7 @@ function PortfolioColumn({
                 />
               </div>
 
-              <div className="space-y-4 transition-opacity duration-500 group-hover:opacity-72">
+              <div className="space-y-4 transition-opacity duration-500 group-hover:opacity-50">
                 <div className="space-y-3">
                   <h3 className="max-w-md font-[family-name:var(--font-display)] text-[2rem] leading-[0.92] tracking-tight text-stone-50 transition-opacity duration-500 group-hover:opacity-75 sm:text-[2.4rem]">
                     {item.title}

@@ -91,7 +91,7 @@ export const visualProofItems: VisualProofItem[] = [
     title: "Ambientes que comunicam solidez",
     description: "Arquitetura, recepção e marca compondo uma presença institucional sólida.",
     highlight: "Percepção premium no detalhe",
-    imageSrc: "/images/Galeria02.webp",
+    imageSrc: "/images/PresencaInstitucional.webp",
     imageAlt: "Ambiente institucional de evento registrado pela Amplifica.",
     size: "medium",
     align: "center",
