@@ -60,7 +60,7 @@ export const metadata: Metadata = {
       "Transformamos experiências ao vivo em conteúdo, posicionamento e impacto duradouro para marcas e instituições.",
     images: [
       {
-        url: "/images/OpenGraphImage.webp",
+        url: "/images/OpenGraphImage.jpg",
         width: 1200,
         height: 630,
         alt: "Open Graph da landing page da Amplifica.",
