@@ -28,118 +28,121 @@ export type VisualProofItem = {
 
 export const navigationItems: NavItem[] = [
   { label: "Quem somos", href: "#quem-somos" },
-  { label: "Solucoes", href: "#solucoes" },
+  { label: "Soluções", href: "#solucoes" },
   { label: "Diferencial", href: "#diferencial" },
   { label: "Contato", href: "#contato" },
 ];
 
 export const heroHighlights: HighlightItem[] = [
   {
-    title: "Estrategia antes da captacao",
-    description: "Cada cobertura comeca com clareza sobre mensagem, publico e objetivos.",
+    title: "Estratégia antes da captação",
+    description:
+      "Cada evento começa com uma leitura clara de narrativa, prioridades e objetivos de comunicação.",
   },
   {
-    title: "Cobertura com visao de marca",
-    description: "O registro do evento e pensado para reforcar posicionamento institucional.",
+    title: "Cobertura com visão de marca",
+    description:
+      "A execução audiovisual é orientada para reforçar autoridade, contexto e percepção de valor.",
   },
   {
-    title: "Conteudo com vida longa",
-    description: "O material captado se transforma em presenca digital e comunicacao continua.",
+    title: "Conteúdo que continua depois",
+    description:
+      "O material captado se transforma em ativos de conteúdo, posicionamento e presença institucional.",
   },
 ];
 
 export const visualProofItems: VisualProofItem[] = [
   {
     title: "Cobertura de eventos",
-    description: "Palco, publico e momentos centrais conduzidos com leitura de marca.",
+    description: "Capítulos visuais pensados para registrar presença, narrativa e relevância.",
     imageSrc: "/images/Galeria01.webp",
-    imageAlt: "Cobertura audiovisual de evento com palco e publico.",
+    imageAlt: "Cobertura audiovisual de evento com palco e público.",
   },
   {
     title: "Ambiente institucional",
-    description: "Estrutura, presencia e atmosfera visual de eventos com valor institucional.",
+    description: "Imagem, atmosfera e estrutura alinhadas a marcas que precisam parecer sólidas.",
     imageSrc: "/images/Galeria02.webp",
     imageAlt: "Ambiente institucional de evento registrado pela Amplifica.",
   },
   {
-    title: "Equipe em acao",
-    description: "Operacao tecnica e bastidores mostrando execucao profissional.",
+    title: "Equipe em ação",
+    description: "Operação técnica conduzida com precisão, discrição e padrão profissional.",
     imageSrc: "/images/Galeria03.webp",
-    imageAlt: "Equipe em acao durante operacao audiovisual de evento.",
+    imageAlt: "Equipe em ação durante operação audiovisual de evento.",
   },
   {
-    title: "Conteudo de marca",
-    description: "Imagens pensadas para seguir comunicando valor no pos-evento.",
+    title: "Conteúdo de marca",
+    description: "Imagens feitas para continuar gerando valor muito além do dia do evento.",
     imageSrc: "/images/Galeria04.webp",
-    imageAlt: "Conteudo visual de marca captado durante evento.",
+    imageAlt: "Conteúdo visual de marca captado durante evento.",
   },
 ];
 
 export const solutionItems: SolutionItem[] = [
   {
-    title: "Estrategia de Conteudo para Eventos",
+    title: "Estratégia de Conteúdo para Eventos",
     description:
-      "Planejamento da comunicacao do evento para que cada captacao tenha direcao, intencao e utilidade no pos-evento.",
+      "Planejamento editorial e de captação para transformar o evento em uma fonte organizada de conteúdo, posicionamento e continuidade de marca.",
     items: [
-      "Definicao da narrativa central do evento",
-      "Planejamento do que precisa ser captado",
-      "Organizacao de entregas para antes, durante e depois",
+      "Definição da narrativa que o evento precisa sustentar.",
+      "Planejamento do que deve ser captado com intenção.",
+      "Estruturação de entregas para antes, durante e depois do evento.",
     ],
   },
   {
     title: "Cobertura Audiovisual de Eventos",
     description:
-      "Execucao audiovisual com foco em qualidade tecnica e coerencia com o posicionamento da marca ou instituicao.",
+      "Execução audiovisual com padrão profissional e critério estratégico, para que o registro tenha qualidade técnica e relevância institucional.",
     items: [
-      "Captacao de video e fotografia",
-      "Registro de momentos-chave e bastidores",
-      "Operacao pensada para valor de marca e clareza de mensagem",
+      "Captação de vídeo, fotografia e momentos-chave.",
+      "Registro de bastidores, palco, público e detalhes de marca.",
+      "Operação orientada por clareza de mensagem e valor percebido.",
     ],
   },
   {
-    title: "Gestao Estrategica de Redes Sociais",
+    title: "Gestão Estratégica de Redes Sociais",
     description:
-      "Curadoria e desdobramento do material do evento em conteudos que fortalecem presenca digital e autoridade.",
+      "Curadoria e desdobramento do material captado em conteúdos que ampliam alcance, reforçam autoridade e prolongam o impacto do evento.",
     items: [
-      "Cortes e formatos para redes sociais",
-      "Organizacao de calendario de publicacoes",
-      "Aproveitamento estrategico do conteudo captado",
+      "Seleção de cortes e formatos para canais digitais.",
+      "Organização de calendário e ritmo de publicação.",
+      "Aproveitamento do evento como ativo de comunicação contínua.",
     ],
   },
 ];
 
 export const differentialItems: HighlightItem[] = [
   {
-    title: "Narrativa do evento",
+    title: "Narrativa antes da operação",
     description:
-      "A Amplifica pensa no que o evento precisa comunicar, e nao apenas no que precisa ser filmado.",
+      "A Amplifica começa pela pergunta certa: o que este evento precisa comunicar para fortalecer a marca ou instituição?",
   },
   {
-    title: "Planejamento de captacao",
+    title: "Captação com critério",
     description:
-      "A cobertura e guiada por prioridades claras para registrar os elementos que sustentam posicionamento e autoridade.",
+      "Nada é registrado por excesso. A cobertura prioriza o que realmente sustenta posicionamento, memória e autoridade.",
   },
   {
-    title: "Aproveitamento no pos-evento",
+    title: "Valor no pós-evento",
     description:
-      "O material nao se encerra na entrega bruta. Ele vira conteudo util para comunicacao e presenca institucional.",
+      "O material não termina na entrega. Ele passa a servir como conteúdo, repertório institucional e presença de longo prazo.",
   },
 ];
 
 export const audienceItems: AudienceItem[] = [
   {
-    title: "Instituicoes culturais e projetos educacionais",
+    title: "Instituições culturais e projetos educacionais",
     description:
-      "Organizacoes que precisam comunicar relevancia, impacto e consistencia em suas iniciativas.",
+      "Para organizações que precisam comunicar impacto, relevância pública e consistência institucional.",
   },
   {
     title: "Igrejas, artistas e marcas autorais",
     description:
-      "Estruturas que realizam eventos e desejam transformar presenca ao vivo em posicionamento continuo.",
+      "Para estruturas que desejam transformar presença ao vivo em conteúdo, memória e autoridade contínua.",
   },
   {
     title: "Empresas B2B e marcas institucionais",
     description:
-      "Times que usam eventos para gerar autoridade, fortalecer imagem e ampliar percepcao de valor.",
+      "Para times que usam eventos como ferramenta de reputação, relacionamento e posicionamento estratégico.",
   },
 ];

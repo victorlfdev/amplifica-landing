@@ -7,8 +7,8 @@ export function SolutionsSection() {
     <SectionShell
       id="solucoes"
       eyebrow="Solucoes"
-      title="A atuacao da Amplifica se organiza em tres frentes principais."
-      description="Cada solucao responde a uma etapa importante da comunicacao de eventos: planejar, executar e transformar o material em presenca continua."
+      title="Tres frentes para transformar um evento em posicionamento."
+      description="A Amplifica organiza sua atuacao em etapas complementares, para que estrategia, execucao e continuidade trabalhem juntas."
     >
       <div className="grid gap-5 sm:gap-6 lg:grid-cols-3">
         {solutionItems.map((item, index) => (

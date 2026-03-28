@@ -6,8 +6,8 @@ export function AudienceSection() {
   return (
     <SectionShell
       eyebrow="Quem mais se beneficia"
-      title="A Amplifica faz mais sentido para organizacoes que usam eventos como ferramenta de posicionamento."
-      description="A comunicacao da landing foi estruturada para dialogar com publicos que dependem de autoridade, clareza institucional e consistencia na presenca digital."
+      title="A Amplifica faz sentido para quem precisa que o evento continue comunicando depois."
+      description="Nossa abordagem conversa com organizacoes que usam eventos para construir reputacao, reforcar posicionamento e ampliar presenca institucional."
     >
       <div className="grid gap-5 sm:gap-6 lg:grid-cols-3">
         {audienceItems.map((item, index) => (

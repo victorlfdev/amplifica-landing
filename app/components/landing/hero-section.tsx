@@ -33,13 +33,12 @@ export function HeroSection() {
               Audiovisual estrategico para eventos
             </p>
             <h1 className="max-w-[12ch] font-[family-name:var(--font-display)] text-[3.1rem] leading-[0.92] tracking-tight text-stone-100 sm:text-[4.1rem] lg:text-[5.35rem]">
-              Transformamos experiencias ao vivo em conteudo, posicionamento e impacto
-              duradouro.
+              Eventos que nao terminam no palco.
             </h1>
             <p className="max-w-2xl text-base leading-7 text-stone-300 sm:text-lg sm:leading-8 lg:text-xl">
-              A Amplifica atua ao lado de marcas, instituicoes e organizacoes que
-              querem extrair mais valor estrategico dos seus eventos, com planejamento,
-              cobertura audiovisual e desdobramento de conteudo.
+              A Amplifica transforma experiencias ao vivo em conteudo, posicionamento e
+              impacto duradouro para marcas, instituicoes e organizacoes que precisam
+              comunicar com mais autoridade.
             </p>
           </motion.header>
 
@@ -52,13 +51,13 @@ export function HeroSection() {
               href="#contato"
               className="inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3.5 text-sm font-semibold text-stone-950 transition hover:brightness-105 sm:w-auto sm:px-6"
             >
-              Falar com a Amplifica
+              Solicitar proposta
             </a>
             <a
               href="#solucoes"
               className="inline-flex w-full items-center justify-center rounded-full border border-white/12 bg-white/4 px-5 py-3.5 text-sm font-semibold text-stone-100 transition hover:bg-white/8 sm:w-auto sm:px-6"
             >
-              Ver solucoes
+              Conhecer as solucoes
             </a>
           </motion.div>
 
@@ -68,26 +67,26 @@ export function HeroSection() {
           >
             <div className="space-y-2">
               <dt className="text-[11px] uppercase tracking-[0.24em] text-stone-500">
-                Foco
+                Para quem
               </dt>
               <dd className="text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                Eventos com valor institucional e de marca.
+                Marcas e instituicoes que constroem autoridade por meio de eventos.
               </dd>
             </div>
             <div className="space-y-2">
               <dt className="text-[11px] uppercase tracking-[0.24em] text-stone-500">
-                Entrega
+                O que entregamos
               </dt>
               <dd className="text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                Direcao, cobertura e conteudo de longo prazo.
+                Direcao, cobertura e desdobramento estrategico do material captado.
               </dd>
             </div>
             <div className="space-y-2">
               <dt className="text-[11px] uppercase tracking-[0.24em] text-stone-500">
-                Abordagem
+                Resultado
               </dt>
               <dd className="text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                Sobriedade, clareza e presenca premium.
+                Mais presenca, mais clareza institucional e mais valor percebido.
               </dd>
             </div>
           </motion.dl>
@@ -108,7 +107,7 @@ export function HeroSection() {
               <div className="overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0b0d] p-5 sm:rounded-[2rem] sm:p-6 lg:p-7">
                 <div className="flex items-center justify-between gap-4">
                   <p className="text-[10px] uppercase tracking-[0.26em] text-[var(--accent)] sm:text-[11px] sm:tracking-[0.32em]">
-                    Cobertura com direcao
+                    Antes, durante e depois
                   </p>
                   <span className="rounded-full border border-white/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-stone-400 sm:px-3 sm:text-[11px] sm:tracking-[0.24em]">
                     Amplifica
@@ -118,20 +117,20 @@ export function HeroSection() {
                 <div className="mt-6 space-y-5 sm:mt-8 sm:space-y-6">
                   <div className="space-y-3">
                     <p className="text-xs uppercase tracking-[0.24em] text-stone-500 sm:text-sm sm:tracking-[0.28em]">
-                      Antes, durante e depois
+                      Visao estrategica
                     </p>
                     <p className="max-w-[13ch] font-[family-name:var(--font-display)] text-[2.5rem] leading-[0.94] text-stone-100 sm:text-[3.25rem]">
-                      O evento nao termina quando as luzes se apagam.
+                      Cada evento pode render muito mais do que registro.
                     </p>
                   </div>
 
                   <div className="grid gap-3 sm:grid-cols-[1.1fr_0.9fr]">
                     <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] p-4 sm:rounded-[1.5rem] sm:p-5">
                       <p className="text-[11px] uppercase tracking-[0.22em] text-stone-500 sm:text-xs sm:tracking-[0.26em]">
-                        Narrativa
+                        Planejamento
                       </p>
                       <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                        Planejamento do que importa captar para fortalecer posicionamento.
+                        Definimos o que precisa ser captado para sustentar narrativa e valor de marca.
                       </p>
                     </div>
                     <div className="rounded-[1.3rem] border border-[var(--accent)]/16 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.03))] p-4 sm:rounded-[1.5rem] sm:p-5">
@@ -139,7 +138,7 @@ export function HeroSection() {
                         Pos-evento
                       </p>
                       <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                        Conteudo desenhado para continuar comunicando valor.
+                        Transformamos o material em conteudo que continua comunicando autoridade.
                       </p>
                     </div>
                   </div>

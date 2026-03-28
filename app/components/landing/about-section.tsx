@@ -6,8 +6,8 @@ export function AboutSection() {
     <SectionShell
       id="quem-somos"
       eyebrow="Quem e a Amplifica"
-      title="A Amplifica une audiovisual profissional com visao estrategica de comunicacao."
-      description="Mais do que registrar um evento, a marca estrutura a captacao para gerar conteudo relevante, presenca digital e autoridade institucional."
+      title="A Amplifica nao atua apenas na cobertura. Atua na construcao de percepcao."
+      description="Somos uma parceira estrategica para marcas e instituicoes que desejam transformar eventos em conteudo relevante, memoria institucional e autoridade de marca."
     >
       <div className="grid gap-5 sm:gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         <Reveal>
@@ -16,21 +16,21 @@ export function AboutSection() {
               Posicionamento
             </p>
             <p className="mt-4 max-w-2xl text-base leading-7 text-stone-200 sm:mt-5 sm:text-lg sm:leading-8">
-              A Amplifica se posiciona como parceira estrategica para marcas, empresas,
-              instituicoes culturais, projetos educacionais, igrejas e organizacoes que
-              usam eventos como parte importante da sua comunicacao.
+              A Amplifica atende empresas, instituicoes culturais, projetos
+              educacionais, igrejas e marcas que usam eventos como parte central da sua
+              comunicacao e precisam parecer mais solidas, relevantes e bem posicionadas.
             </p>
           </article>
         </Reveal>
         <Reveal delay={0.1}>
           <article className="rounded-[1.7rem] border border-white/8 bg-white/[0.03] p-6 shadow-[0_14px_50px_rgba(0,0,0,0.2)] sm:rounded-[2rem] sm:p-8 lg:p-10">
             <p className="text-xs uppercase tracking-[0.24em] text-stone-500 sm:text-sm sm:tracking-[0.28em]">
-              Abordagem
+              Como pensamos
             </p>
             <p className="mt-4 text-base leading-7 text-stone-300 sm:mt-5 sm:text-lg sm:leading-8">
-              Seu trabalho comeca antes da execucao audiovisual, passa pela cobertura do
-              evento e continua no uso inteligente do material no pos-evento, com foco em
-              posicionamento, clareza de mensagem e valor de marca.
+              O trabalho comeca antes da execucao, passa por uma cobertura guiada por
+              criterio e continua no pos-evento, quando o material captado precisa
+              seguir gerando conteudo, posicionamento e impacto duradouro.
             </p>
           </article>
         </Reveal>

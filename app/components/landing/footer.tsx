@@ -11,7 +11,7 @@ export function Footer() {
           </p>
         </div>
         <p className="max-w-md leading-7">
-          Audiovisual estrategico para eventos, conteudo e posicionamento de marca.
+          Transformamos eventos em conteudo, posicionamento e impacto duradouro.
         </p>
       </div>
     </footer>
