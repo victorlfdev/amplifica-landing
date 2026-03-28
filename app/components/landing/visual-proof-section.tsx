@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { visualProofItems } from "./content";
 import { SectionShell } from "./section-shell";
 
 export function VisualProofSection() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <SectionShell
       eyebrow="Prova visual"
@@ -20,18 +22,22 @@ export function VisualProofSection() {
           return (
             <motion.article
               key={item.title}
-              initial={{ opacity: 0, y: 26 }}
+              initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 26 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.7,
-                delay: index * 0.08,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+              transition={
+                prefersReducedMotion
+                  ? { duration: 0 }
+                  : {
+                      duration: 0.7,
+                      delay: index * 0.08,
+                      ease: [0.22, 1, 0.36, 1],
+                    }
+              }
               className={[
                 "group relative overflow-hidden rounded-[1.7rem] border border-white/10",
                 "bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]",
-                "shadow-[0_18px_70px_rgba(0,0,0,0.28)] sm:rounded-[2rem]",
+                "shadow-[0_18px_70px_rgba(0,0,0,0.28)] transition-colors duration-300 hover:border-white/15 sm:rounded-[2rem]",
                 featured ? "md:col-span-2" : "",
                 tall ? "xl:row-span-2 xl:min-h-[456px]" : "",
               ].join(" ")}
@@ -41,10 +47,10 @@ export function VisualProofSection() {
                 alt={item.imageAlt}
                 fill
                 sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
-                className="object-cover"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.08),rgba(5,5,5,0.38)_42%,rgba(5,5,5,0.82)_100%)]" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.2),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.18))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.06),rgba(5,5,5,0.34)_42%,rgba(5,5,5,0.82)_100%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.18),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.18))]" />
               <div
                 className={[
                   "absolute inset-x-3 bottom-3 top-14 rounded-[1.35rem] border border-white/8 bg-transparent sm:inset-x-4 sm:bottom-4 sm:top-16 sm:rounded-[1.6rem]",
@@ -56,9 +62,9 @@ export function VisualProofSection() {
                   <p className="text-[10px] uppercase tracking-[0.26em] text-stone-300/80 sm:text-[11px] sm:tracking-[0.3em]">
                     Galeria 0{index + 1}
                   </p>
-                  <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent)]/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent)]/80 transition-transform duration-300 group-hover:scale-110" />
                 </div>
-                <div className="max-w-sm space-y-3">
+                <div className="max-w-sm space-y-3 transition-transform duration-300 group-hover:-translate-y-0.5">
                   <h3
                     className={[
                       "font-[family-name:var(--font-display)] leading-[0.94] text-stone-50",

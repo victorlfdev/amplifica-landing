@@ -38,7 +38,7 @@ export function SectionShell({
             ) : null}
           </div>
         </Reveal>
-        {children}
+        <div className="contents">{children}</div>
       </div>
     </section>
   );

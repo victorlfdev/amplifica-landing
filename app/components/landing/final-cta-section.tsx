@@ -19,13 +19,13 @@ export function FinalCtaSection() {
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4">
               <a
                 href="https://wa.me/"
-                className="inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3.5 text-sm font-semibold text-stone-950 transition hover:brightness-105 sm:w-auto sm:px-6"
+                className="inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3.5 text-sm font-semibold text-stone-950 shadow-[0_10px_30px_rgba(213,185,138,0.16)] hover:-translate-y-0.5 hover:brightness-105 sm:w-auto sm:px-6"
               >
                 Falar no WhatsApp
               </a>
               <a
                 href="mailto:contato@amplifica.com.br"
-                className="inline-flex w-full items-center justify-center rounded-full border border-white/12 bg-white/5 px-5 py-3.5 text-sm font-semibold text-stone-100 transition hover:bg-white/8 sm:w-auto sm:px-6"
+                className="inline-flex w-full items-center justify-center rounded-full border border-white/12 bg-white/5 px-5 py-3.5 text-sm font-semibold text-stone-100 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/8 sm:w-auto sm:px-6"
               >
                 Solicitar proposta
               </a>

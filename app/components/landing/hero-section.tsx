@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { heroHighlights } from "./content";
 
 const spotlightMotion = {
@@ -10,6 +10,8 @@ const spotlightMotion = {
 };
 
 export function HeroSection() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section className="border-b border-white/8 px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-20 lg:px-16 lg:pb-28 lg:pt-28">
       <div
@@ -49,13 +51,13 @@ export function HeroSection() {
           >
             <a
               href="#contato"
-              className="inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3.5 text-sm font-semibold text-stone-950 transition hover:brightness-105 sm:w-auto sm:px-6"
+              className="inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3.5 text-sm font-semibold text-stone-950 shadow-[0_10px_30px_rgba(213,185,138,0.16)] hover:-translate-y-0.5 hover:brightness-105 sm:w-auto sm:px-6"
             >
               Solicitar proposta
             </a>
             <a
               href="#solucoes"
-              className="inline-flex w-full items-center justify-center rounded-full border border-white/12 bg-white/4 px-5 py-3.5 text-sm font-semibold text-stone-100 transition hover:bg-white/8 sm:w-auto sm:px-6"
+              className="inline-flex w-full items-center justify-center rounded-full border border-white/12 bg-white/4 px-5 py-3.5 text-sm font-semibold text-stone-100 hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/8 sm:w-auto sm:px-6"
             >
               Conhecer as soluções
             </a>
@@ -93,9 +95,13 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 36 }}
+          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, x: 36 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.95, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          transition={
+            prefersReducedMotion
+              ? { duration: 0 }
+              : { duration: 0.95, delay: 0.15, ease: [0.22, 1, 0.36, 1] }
+          }
           className="relative"
         >
           <div className="absolute -right-4 bottom-4 h-20 w-20 rounded-full bg-white/8 blur-3xl sm:-right-6 sm:bottom-6 sm:h-24 sm:w-24" />
@@ -125,7 +131,7 @@ export function HeroSection() {
                   </div>
 
                   <div className="grid gap-3 sm:grid-cols-[1.1fr_0.9fr]">
-                    <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] p-4 sm:rounded-[1.5rem] sm:p-5">
+                    <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] p-4 transition-colors duration-200 hover:border-white/12 hover:bg-white/[0.06] sm:rounded-[1.5rem] sm:p-5">
                       <p className="text-[11px] uppercase tracking-[0.22em] text-stone-500 sm:text-xs sm:tracking-[0.26em]">
                         Planejamento
                       </p>
@@ -133,7 +139,7 @@ export function HeroSection() {
                         Definimos o que precisa ser captado para sustentar narrativa e valor de marca.
                       </p>
                     </div>
-                    <div className="rounded-[1.3rem] border border-[var(--accent)]/16 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.03))] p-4 sm:rounded-[1.5rem] sm:p-5">
+                    <div className="rounded-[1.3rem] border border-[var(--accent)]/16 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.03))] p-4 transition-colors duration-200 hover:border-[var(--accent)]/28 hover:bg-[linear-gradient(180deg,rgba(213,185,138,0.18),rgba(255,255,255,0.04))] sm:rounded-[1.5rem] sm:p-5">
                       <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--accent)] sm:text-xs sm:tracking-[0.26em]">
                         Pós-evento
                       </p>
@@ -149,14 +155,18 @@ export function HeroSection() {
                 {heroHighlights.map((item, index) => (
                   <motion.article
                     key={item.title}
-                    initial={{ opacity: 0, y: 22 }}
+                    initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 22 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.7,
-                      delay: 0.3 + index * 0.08,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className="rounded-[1.4rem] border border-white/8 bg-black/25 p-4 backdrop-blur-sm sm:rounded-[1.6rem] sm:p-5"
+                    transition={
+                      prefersReducedMotion
+                        ? { duration: 0 }
+                        : {
+                            duration: 0.7,
+                            delay: 0.3 + index * 0.08,
+                            ease: [0.22, 1, 0.36, 1],
+                          }
+                    }
+                    className="rounded-[1.4rem] border border-white/8 bg-black/25 p-4 backdrop-blur-sm transition-colors duration-200 hover:border-white/12 hover:bg-black/30 sm:rounded-[1.6rem] sm:p-5"
                   >
                     <p className="text-[10px] uppercase tracking-[0.26em] text-stone-500 sm:text-[11px] sm:tracking-[0.3em]">
                       0{index + 1}

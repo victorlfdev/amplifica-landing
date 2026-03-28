@@ -18,7 +18,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-stone-300 transition hover:text-stone-100"
+              className="relative text-sm text-stone-300 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-[var(--accent)] after:transition-[width] after:duration-200 hover:text-stone-100 hover:after:w-full"
             >
               {item.label}
             </a>
@@ -27,7 +27,7 @@ export function Header() {
 
         <a
           href="#contato"
-          className="shrink-0 rounded-full border border-white/12 bg-white/4 px-3.5 py-2 text-xs font-medium text-stone-100 transition hover:border-[var(--accent)]/40 hover:bg-white/8 sm:px-5 sm:py-2.5 sm:text-sm"
+          className="shrink-0 rounded-full border border-white/12 bg-white/4 px-3.5 py-2 text-xs font-medium text-stone-100 hover:border-[var(--accent)]/50 hover:bg-white/8 hover:text-white sm:px-5 sm:py-2.5 sm:text-sm"
         >
           Solicitar proposta
         </a>
