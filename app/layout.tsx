@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
@@ -13,10 +13,83 @@ const cormorant = Cormorant_Garamond({
   weight: ["500", "600", "700"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://amplificamidias.com.br";
+
+export const viewport: Viewport = {
+  themeColor: "#050505",
+  colorScheme: "dark",
+};
+
 export const metadata: Metadata = {
-  title: "Amplifica | Audiovisual estratégico para eventos",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Amplifica | Audiovisual estratégico para eventos",
+    template: "%s | Amplifica",
+  },
   description:
-    "Landing page institucional da Amplifica com foco em audiovisual estratégico, posicionamento e geração de leads.",
+    "A Amplifica transforma eventos em conteúdo, posicionamento e impacto duradouro com direção estratégica, cobertura audiovisual e desdobramento de marca.",
+  applicationName: "Amplifica",
+  keywords: [
+    "Amplifica",
+    "audiovisual estratégico",
+    "cobertura audiovisual de eventos",
+    "estratégia de conteúdo para eventos",
+    "conteúdo para marcas",
+    "marketing para eventos",
+    "eventos institucionais",
+    "produção audiovisual",
+  ],
+  authors: [{ name: "Amplifica" }],
+  creator: "Amplifica",
+  publisher: "Amplifica",
+  category: "business",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "/",
+    siteName: "Amplifica",
+    title: "Amplifica | Audiovisual estratégico para eventos",
+    description:
+      "Transformamos experiências ao vivo em conteúdo, posicionamento e impacto duradouro para marcas e instituições.",
+    images: [
+      {
+        url: "/images/Galeria01.webp",
+        width: 1200,
+        height: 1500,
+        alt: "Cobertura audiovisual de evento da Amplifica.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amplifica | Audiovisual estratégico para eventos",
+    description:
+      "Cobertura, direção estratégica e conteúdo de longo prazo para marcas que constroem autoridade com eventos.",
+    images: ["/images/Galeria01.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/images/AmplificaIconeBranco.webp", type: "image/webp" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/images/AmplificaIconeBranco.webp",
+  },
 };
 
 type RootLayoutProps = Readonly<{
