@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
@@ -105,6 +106,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={`${manrope.variable} ${cormorant.variable}`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
