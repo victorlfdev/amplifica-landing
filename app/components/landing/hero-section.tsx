@@ -131,19 +131,19 @@ export function HeroSection() {
                   </div>
 
                   <div className="grid gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-[1.1fr_0.9fr]">
-                    <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] p-4 transition-colors duration-200 hover:border-white/12 hover:bg-white/[0.06] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[172px] md:flex-col md:justify-between md:p-5">
+                    <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] p-4 transition-colors duration-200 hover:border-white/12 hover:bg-white/[0.06] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[188px] md:flex-col md:justify-between md:p-5 lg:min-h-[172px]">
                       <p className="text-[11px] uppercase tracking-[0.22em] text-stone-500 sm:text-xs sm:tracking-[0.26em]">
                         Planejamento
                       </p>
-                      <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7 md:mt-5">
+                      <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7 md:mt-5 md:max-w-[24ch] md:text-[0.96rem] md:leading-6 lg:max-w-none lg:text-base lg:leading-7">
                         Definimos o que precisa ser captado para sustentar narrativa e valor de marca.
                       </p>
                     </div>
-                    <div className="rounded-[1.3rem] border border-[var(--accent)]/16 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.03))] p-4 transition-colors duration-200 hover:border-[var(--accent)]/28 hover:bg-[linear-gradient(180deg,rgba(213,185,138,0.18),rgba(255,255,255,0.04))] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[172px] md:flex-col md:justify-between md:p-5">
+                    <div className="rounded-[1.3rem] border border-[var(--accent)]/16 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.03))] p-4 transition-colors duration-200 hover:border-[var(--accent)]/28 hover:bg-[linear-gradient(180deg,rgba(213,185,138,0.18),rgba(255,255,255,0.04))] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[188px] md:flex-col md:justify-between md:p-5 lg:min-h-[172px]">
                       <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--accent)] sm:text-xs sm:tracking-[0.26em]">
                         Pós-evento
                       </p>
-                      <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7 md:mt-5">
+                      <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7 md:mt-5 md:max-w-[23ch] md:text-[0.94rem] md:leading-6 lg:max-w-none lg:text-base lg:leading-7">
                         Transformamos o material em conteúdo que continua comunicando autoridade.
                       </p>
                     </div>
@@ -152,7 +152,7 @@ export function HeroSection() {
               </div>
 
               <div
-                className="grid gap-3 sm:grid-cols-3 sm:gap-4 md:gap-3.5"
+                className="grid gap-3 sm:grid-cols-3 sm:gap-4 md:gap-3 lg:gap-4"
                 aria-label="Destaques da proposta"
               >
                 {heroHighlights.map((item, index) => (
@@ -169,17 +169,17 @@ export function HeroSection() {
                             ease: [0.22, 1, 0.36, 1],
                           }
                     }
-                    className="rounded-[1.4rem] border border-white/8 bg-black/25 p-4 backdrop-blur-sm transition-colors duration-200 hover:border-white/12 hover:bg-black/30 sm:rounded-[1.6rem] sm:p-5 md:flex md:min-h-[184px] md:flex-col md:justify-between md:px-4 md:py-5 lg:p-5"
+                    className="rounded-[1.4rem] border border-white/8 bg-black/25 p-4 backdrop-blur-sm transition-colors duration-200 hover:border-white/12 hover:bg-black/30 sm:rounded-[1.6rem] sm:p-5 md:flex md:min-h-[212px] md:flex-col md:justify-between md:px-4 md:py-5 lg:min-h-[184px] lg:p-5"
                   >
                     <div className="space-y-3 md:space-y-3.5">
                       <p className="text-[10px] uppercase tracking-[0.26em] text-stone-500 sm:text-[11px] sm:tracking-[0.3em]">
                         0{index + 1}
                       </p>
-                      <h2 className="text-base font-semibold leading-5 text-stone-100 sm:text-lg md:text-[1.02rem] md:leading-6">
+                      <h2 className="text-base font-semibold leading-5 text-stone-100 sm:text-lg md:text-[0.98rem] md:leading-5 lg:text-[1.02rem] lg:leading-6">
                         {item.title}
                       </h2>
                     </div>
-                    <p className="mt-3 text-sm leading-6 text-stone-300 sm:leading-7 md:mt-5 md:text-[0.92rem] md:leading-6">
+                    <p className="mt-3 text-sm leading-6 text-stone-300 sm:leading-7 md:mt-5 md:text-[0.89rem] md:leading-5 lg:text-[0.92rem] lg:leading-6">
                       {item.description}
                     </p>
                   </motion.article>
