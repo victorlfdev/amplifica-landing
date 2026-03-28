@@ -5,13 +5,13 @@ export function FinalCtaSection() {
     <SectionShell
       id="contato"
       eyebrow="CTA final"
-      title="Placeholder para o fechamento com contato e solicitação de proposta."
-      description="A estrutura já deixa preparado o espaço de conversão principal da página."
+      title="Se o seu evento precisa gerar mais do que lembrança, a conversa começa aqui."
+      description="A Amplifica estrutura cobertura, conteúdo e direção estratégica para transformar o evento em um ativo real de comunicação."
     >
       <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
         <p className="max-w-2xl text-base leading-7 text-neutral-300">
-          Placeholder para uma chamada final curta, com reforço de valor e convite para
-          conversar sobre o próximo evento.
+          Solicite uma proposta ou inicie uma conversa para entender como sua marca,
+          instituição ou projeto pode aproveitar melhor o valor gerado em cada evento.
         </p>
         <div className="mt-6 flex flex-col gap-4 sm:flex-row">
           <a
@@ -24,7 +24,7 @@ export function FinalCtaSection() {
             href="mailto:contato@amplifica.com.br"
             className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold"
           >
-            Solicitar proposta
+            Solicitar proposta por e-mail
           </a>
         </div>
       </div>

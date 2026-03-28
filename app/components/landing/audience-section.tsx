@@ -5,8 +5,8 @@ export function AudienceSection() {
   return (
     <SectionShell
       eyebrow="Quem mais se beneficia"
-      title="Placeholder para a seção de públicos prioritários."
-      description="Esta área organiza os perfis que a landing vai abordar com mais precisão nas próximas etapas."
+      title="A Amplifica faz mais sentido para organizações que usam eventos como ferramenta de posicionamento."
+      description="A comunicação da landing foi estruturada para dialogar com públicos que dependem de autoridade, clareza institucional e consistência na presença digital."
     >
       <div className="grid gap-6 lg:grid-cols-3">
         {audienceItems.map((item) => (

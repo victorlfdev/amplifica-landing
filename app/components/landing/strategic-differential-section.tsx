@@ -6,8 +6,8 @@ export function StrategicDifferentialSection() {
     <SectionShell
       id="diferencial"
       eyebrow="Diferencial estratégico"
-      title="Placeholder para destacar o raciocínio antes, durante e depois do evento."
-      description="A seção já foi separada para evidenciar o ponto central do posicionamento da marca."
+      title="O diferencial da Amplifica está em pensar estrategicamente antes da execução."
+      description="A cobertura audiovisual faz parte de um raciocínio maior: o que comunicar, o que captar e como transformar esse material em valor de marca."
     >
       <div className="grid gap-6 md:grid-cols-3">
         {differentialItems.map((item) => (
