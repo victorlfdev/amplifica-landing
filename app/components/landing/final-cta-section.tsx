@@ -5,7 +5,7 @@ export function FinalCtaSection() {
   return (
     <SectionShell
       id="contato"
-      eyebrow="CTA final"
+      eyebrow="Vamos conversar?"
       title="Se o seu evento precisa gerar posicionamento, a conversa começa aqui."
       description="Vamos estruturar uma cobertura que não entregue apenas material bruto, mas ativos de comunicação que continuem trabalhando pela sua marca."
     >
