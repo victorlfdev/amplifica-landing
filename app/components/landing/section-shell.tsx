@@ -1,3 +1,5 @@
+import { Reveal } from "./reveal";
+
 type SectionShellProps = Readonly<{
   id?: string;
   eyebrow?: string;
@@ -19,7 +21,7 @@ export function SectionShell({
       className="border-b border-white/8 px-6 py-18 sm:px-10 sm:py-24 lg:px-16 lg:py-28"
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 lg:gap-14">
-        <div className="max-w-3xl space-y-5">
+        <Reveal className="max-w-3xl space-y-5">
           {eyebrow ? (
             <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[var(--accent)]">
               {eyebrow}
@@ -35,7 +37,7 @@ export function SectionShell({
               </p>
             ) : null}
           </div>
-        </div>
+        </Reveal>
         {children}
       </div>
     </section>
