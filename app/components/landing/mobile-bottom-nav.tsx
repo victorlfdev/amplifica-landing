@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
 
-import { contactLinks } from "./content";
-
 type MobileNavItem = {
   label: string;
   href: string;
@@ -56,20 +54,19 @@ const navItems: MobileNavItem[] = [
     ),
   },
   {
-    label: "WhatsApp",
-    href: contactLinks.whatsapp.href,
-    ariaLabel: "Falar com a Amplifica no WhatsApp",
-    external: true,
+    label: "Contato",
+    href: "#contato",
+    ariaLabel: "Ir para a seção de contato",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4.5 w-4.5 fill-none stroke-current">
         <path
-          d="M12 4.75a7.25 7.25 0 0 0-6.31 10.82L4.75 19.25l3.83-.88A7.25 7.25 0 1 0 12 4.75Z"
+          d="M5.75 7.75A2.75 2.75 0 0 1 8.5 5h7a2.75 2.75 0 0 1 2.75 2.75v8.5A2.75 2.75 0 0 1 15.5 19h-7a2.75 2.75 0 0 1-2.75-2.75v-8.5Z"
           strokeWidth="1.7"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
-          d="M9.2 10.1c.33 1.54 2 3.13 3.52 3.45.42.08.9.01 1.17-.27l.74-.72"
+          d="M7.75 8.25 12 11.75l4.25-3.5"
           strokeWidth="1.7"
           strokeLinecap="round"
           strokeLinejoin="round"
