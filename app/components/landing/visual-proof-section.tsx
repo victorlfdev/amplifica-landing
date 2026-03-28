@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { visualProofItems } from "./content";
 import { SectionShell } from "./section-shell";
@@ -29,38 +30,44 @@ export function VisualProofSection() {
               }}
               className={[
                 "group relative overflow-hidden rounded-[1.7rem] border border-white/10",
-                "bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-5",
-                "shadow-[0_18px_70px_rgba(0,0,0,0.28)] sm:rounded-[2rem] sm:p-6",
+                "bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]",
+                "shadow-[0_18px_70px_rgba(0,0,0,0.28)] sm:rounded-[2rem]",
                 featured ? "md:col-span-2" : "",
                 tall ? "xl:row-span-2 xl:min-h-[456px]" : "",
               ].join(" ")}
             >
+              <Image
+                src={item.imageSrc}
+                alt={item.imageAlt}
+                fill
+                sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 25vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.08),rgba(5,5,5,0.38)_42%,rgba(5,5,5,0.82)_100%)]" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.2),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.18))]" />
               <div
                 className={[
-                  "absolute inset-x-3 bottom-3 top-14 rounded-[1.35rem] border border-white/8 sm:inset-x-4 sm:bottom-4 sm:top-16 sm:rounded-[1.6rem]",
-                  featured
-                    ? "bg-[linear-gradient(135deg,rgba(213,185,138,0.2),rgba(255,255,255,0.05)_35%,rgba(0,0,0,0.2))]"
-                    : "bg-[linear-gradient(160deg,rgba(255,255,255,0.12),rgba(0,0,0,0.18))]",
+                  "absolute inset-x-3 bottom-3 top-14 rounded-[1.35rem] border border-white/8 bg-transparent sm:inset-x-4 sm:bottom-4 sm:top-16 sm:rounded-[1.6rem]",
+                  featured ? "shadow-[inset_0_0_0_1px_rgba(213,185,138,0.08)]" : "",
                 ].join(" ")}
               />
-              <div className="relative flex h-full flex-col justify-between">
+              <div className="relative flex h-full flex-col justify-between p-5 sm:p-6">
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-[10px] uppercase tracking-[0.26em] text-stone-500 sm:text-[11px] sm:tracking-[0.3em]">
+                  <p className="text-[10px] uppercase tracking-[0.26em] text-stone-300/80 sm:text-[11px] sm:tracking-[0.3em]">
                     Galeria 0{index + 1}
                   </p>
-                  <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent)]/70" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent)]/80" />
                 </div>
                 <div className="max-w-sm space-y-3">
                   <h3
                     className={[
-                      "font-[family-name:var(--font-display)] leading-[0.94] text-stone-100",
+                      "font-[family-name:var(--font-display)] leading-[0.94] text-stone-50",
                       featured ? "text-[2.2rem] sm:text-5xl" : "text-[2rem] sm:text-3xl",
                     ].join(" ")}
                   >
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-6 text-stone-300 sm:leading-7">
+                  <p className="text-sm leading-6 text-stone-200 sm:leading-7">
                     {item.description}
                   </p>
                 </div>
