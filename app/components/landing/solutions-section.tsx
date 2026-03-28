@@ -6,16 +6,16 @@ export function SolutionsSection() {
   return (
     <SectionShell
       id="solucoes"
-      eyebrow="Solucoes"
-      title="Tres frentes para transformar um evento em posicionamento."
-      description="A Amplifica organiza sua atuacao em etapas complementares, para que estrategia, execucao e continuidade trabalhem juntas."
+      eyebrow="Soluções"
+      title="Três frentes para transformar um evento em posicionamento."
+      description="A Amplifica organiza sua atuação em etapas complementares, para que estratégia, execução e continuidade trabalhem juntas."
     >
       <div className="grid gap-5 sm:gap-6 lg:grid-cols-3">
         {solutionItems.map((item, index) => (
           <Reveal key={item.title} delay={index * 0.08}>
             <article className="h-full rounded-[1.7rem] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-6 shadow-[0_16px_55px_rgba(0,0,0,0.22)] sm:rounded-[2rem] sm:p-8">
               <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--accent)] sm:text-xs sm:tracking-[0.28em]">
-                Solucao 0{index + 1}
+                Solução 0{index + 1}
               </p>
               <h3 className="mt-4 font-[family-name:var(--font-display)] text-[2rem] leading-[0.94] text-stone-100 sm:text-3xl">
                 {item.title}

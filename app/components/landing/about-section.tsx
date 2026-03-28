@@ -5,9 +5,9 @@ export function AboutSection() {
   return (
     <SectionShell
       id="quem-somos"
-      eyebrow="Quem e a Amplifica"
-      title="A Amplifica nao atua apenas na cobertura. Atua na construcao de percepcao."
-      description="Somos uma parceira estrategica para marcas e instituicoes que desejam transformar eventos em conteudo relevante, memoria institucional e autoridade de marca."
+      eyebrow="Quem é a Amplifica"
+      title="A Amplifica não atua apenas na cobertura. Atua na construção de percepção."
+      description="Somos uma parceira estratégica para marcas e instituições que desejam transformar eventos em conteúdo relevante, memória institucional e autoridade de marca."
     >
       <div className="grid gap-5 sm:gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         <Reveal>
@@ -16,9 +16,9 @@ export function AboutSection() {
               Posicionamento
             </p>
             <p className="mt-4 max-w-2xl text-base leading-7 text-stone-200 sm:mt-5 sm:text-lg sm:leading-8">
-              A Amplifica atende empresas, instituicoes culturais, projetos
-              educacionais, igrejas e marcas que usam eventos como parte central da sua
-              comunicacao e precisam parecer mais solidas, relevantes e bem posicionadas.
+              A Amplifica atende empresas, instituições culturais, projetos educacionais,
+              igrejas e marcas que usam eventos como parte central da sua comunicação e
+              precisam parecer mais sólidas, relevantes e bem posicionadas.
             </p>
           </article>
         </Reveal>
@@ -28,9 +28,9 @@ export function AboutSection() {
               Como pensamos
             </p>
             <p className="mt-4 text-base leading-7 text-stone-300 sm:mt-5 sm:text-lg sm:leading-8">
-              O trabalho comeca antes da execucao, passa por uma cobertura guiada por
-              criterio e continua no pos-evento, quando o material captado precisa
-              seguir gerando conteudo, posicionamento e impacto duradouro.
+              O trabalho começa antes da execução, passa por uma cobertura guiada por
+              critério e continua no pós-evento, quando o material captado precisa seguir
+              gerando conteúdo, posicionamento e impacto duradouro.
             </p>
           </article>
         </Reveal>

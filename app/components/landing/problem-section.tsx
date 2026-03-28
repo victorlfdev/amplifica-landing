@@ -5,8 +5,8 @@ export function ProblemSection() {
   return (
     <SectionShell
       eyebrow="Problema e oportunidade"
-      title="Sem estrategia, o valor de um evento costuma desaparecer rapido demais."
-      description="Muitas marcas investem na experiencia ao vivo, mas deixam passar a oportunidade de transformar esse momento em conteudo, repertorio e autoridade de longo prazo."
+      title="Sem estratégia, o valor de um evento costuma desaparecer rápido demais."
+      description="Muitas marcas investem na experiência ao vivo, mas deixam passar a oportunidade de transformar esse momento em conteúdo, repertório e autoridade de longo prazo."
     >
       <div className="grid gap-5 sm:gap-6 lg:grid-cols-2">
         <Reveal>
@@ -15,11 +15,11 @@ export function ProblemSection() {
               O que costuma acontecer
             </p>
             <h3 className="mt-4 text-xl font-semibold text-stone-100 sm:mt-5 sm:text-2xl">
-              Muito esforco, pouco desdobramento
+              Muito esforço, pouco desdobramento
             </h3>
             <p className="mt-4 text-base leading-7 text-stone-300 sm:leading-8">
-              O evento mobiliza equipe, publico e investimento, mas o registro final nao
-              se converte em ativos consistentes de comunicacao, memoria ou posicionamento.
+              O evento mobiliza equipe, público e investimento, mas o registro final não
+              se converte em ativos consistentes de comunicação, memória ou posicionamento.
             </p>
           </article>
         </Reveal>
@@ -29,11 +29,11 @@ export function ProblemSection() {
               O que a Amplifica faz
             </p>
             <h3 className="mt-4 text-xl font-semibold text-stone-100 sm:mt-5 sm:text-2xl">
-              Transforma presenca em ativo de marca
+              Transforma presença em ativo de marca
             </h3>
             <p className="mt-4 text-base leading-7 text-stone-200 sm:leading-8">
-              Estruturamos a cobertura para que cada evento gere narrativa, conteudo,
-              presenca digital e fortalecimento institucional muito alem do dia em que ele acontece.
+              Estruturamos a cobertura para que cada evento gere narrativa, conteúdo,
+              presença digital e fortalecimento institucional muito além do dia em que ele acontece.
             </p>
           </article>
         </Reveal>

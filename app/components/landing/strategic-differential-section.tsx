@@ -6,9 +6,9 @@ export function StrategicDifferentialSection() {
   return (
     <SectionShell
       id="diferencial"
-      eyebrow="Diferencial estrategico"
-      title="O diferencial da Amplifica esta na inteligencia que antecede a captacao."
-      description="Nao registramos apenas o que acontece. Definimos o que precisa ser preservado, ampliado e reutilizado para fortalecer a marca depois do evento."
+      eyebrow="Diferencial estratégico"
+      title="O diferencial da Amplifica está na inteligência que antecede a captação."
+      description="Não registramos apenas o que acontece. Definimos o que precisa ser preservado, ampliado e reutilizado para fortalecer a marca depois do evento."
     >
       <div className="grid gap-5 sm:gap-6 md:grid-cols-3">
         {differentialItems.map((item, index) => (

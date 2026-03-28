@@ -9,8 +9,8 @@ export function VisualProofSection() {
   return (
     <SectionShell
       eyebrow="Prova visual"
-      title="Projetos que falam por si mesmos"
-      description="A galeria apresenta uma variedade de projetos e casos de sucesso, cada um demonstrando a capacidade da Amplifica de transformar ideias em realidade. Desde o design inovador até a execução impecável, cada projeto é uma prova visual do impacto positivo que a Amplifica tem no mundo digital."
+      title="Imagens que reforçam presença, escala e valor percebido."
+      description="A galeria apresenta recortes reais da atuação da Amplifica em eventos, com foco em atmosfera, operação, marca e força institucional."
     >
       <div className="grid auto-rows-[190px] gap-4 sm:auto-rows-[220px] md:grid-cols-2 xl:grid-cols-4">
         {visualProofItems.map((item, index) => {
@@ -54,6 +54,7 @@ export function VisualProofSection() {
               <div className="relative flex h-full flex-col justify-between p-5 sm:p-6">
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-[10px] uppercase tracking-[0.26em] text-stone-300/80 sm:text-[11px] sm:tracking-[0.3em]">
+                    Galeria 0{index + 1}
                   </p>
                   <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent)]/80" />
                 </div>

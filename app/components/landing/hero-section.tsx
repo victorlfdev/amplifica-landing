@@ -30,14 +30,14 @@ export function HeroSection() {
         >
           <motion.header variants={spotlightMotion} className="max-w-4xl space-y-5 sm:space-y-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--accent)] sm:text-xs sm:tracking-[0.34em]">
-              Audiovisual estrategico para eventos
+              Audiovisual estratégico para eventos
             </p>
             <h1 className="max-w-[12ch] font-[family-name:var(--font-display)] text-[3.1rem] leading-[0.92] tracking-tight text-stone-100 sm:text-[4.1rem] lg:text-[5.35rem]">
-              Eventos que nao terminam no palco.
+              Eventos que não terminam no palco.
             </h1>
             <p className="max-w-2xl text-base leading-7 text-stone-300 sm:text-lg sm:leading-8 lg:text-xl">
-              A Amplifica transforma experiencias ao vivo em conteudo, posicionamento e
-              impacto duradouro para marcas, instituicoes e organizacoes que precisam
+              A Amplifica transforma experiências ao vivo em conteúdo, posicionamento e
+              impacto duradouro para marcas, instituições e organizações que precisam
               comunicar com mais autoridade.
             </p>
           </motion.header>
@@ -45,7 +45,7 @@ export function HeroSection() {
           <motion.div
             variants={spotlightMotion}
             className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4"
-            aria-label="Acoes principais"
+            aria-label="Ações principais"
           >
             <a
               href="#contato"
@@ -57,7 +57,7 @@ export function HeroSection() {
               href="#solucoes"
               className="inline-flex w-full items-center justify-center rounded-full border border-white/12 bg-white/4 px-5 py-3.5 text-sm font-semibold text-stone-100 transition hover:bg-white/8 sm:w-auto sm:px-6"
             >
-              Conhecer as solucoes
+              Conhecer as soluções
             </a>
           </motion.div>
 
@@ -70,7 +70,7 @@ export function HeroSection() {
                 Para quem
               </dt>
               <dd className="text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                Marcas e instituicoes que constroem autoridade por meio de eventos.
+                Marcas e instituições que constroem autoridade por meio de eventos.
               </dd>
             </div>
             <div className="space-y-2">
@@ -78,7 +78,7 @@ export function HeroSection() {
                 O que entregamos
               </dt>
               <dd className="text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                Direcao, cobertura e desdobramento estrategico do material captado.
+                Direção, cobertura e desdobramento estratégico do material captado.
               </dd>
             </div>
             <div className="space-y-2">
@@ -86,7 +86,7 @@ export function HeroSection() {
                 Resultado
               </dt>
               <dd className="text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                Mais presenca, mais clareza institucional e mais valor percebido.
+                Mais presença, mais clareza institucional e mais valor percebido.
               </dd>
             </div>
           </motion.dl>
@@ -117,7 +117,7 @@ export function HeroSection() {
                 <div className="mt-6 space-y-5 sm:mt-8 sm:space-y-6">
                   <div className="space-y-3">
                     <p className="text-xs uppercase tracking-[0.24em] text-stone-500 sm:text-sm sm:tracking-[0.28em]">
-                      Visao estrategica
+                      Visão estratégica
                     </p>
                     <p className="max-w-[13ch] font-[family-name:var(--font-display)] text-[2.5rem] leading-[0.94] text-stone-100 sm:text-[3.25rem]">
                       Cada evento pode render muito mais do que registro.
@@ -135,10 +135,10 @@ export function HeroSection() {
                     </div>
                     <div className="rounded-[1.3rem] border border-[var(--accent)]/16 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.03))] p-4 sm:rounded-[1.5rem] sm:p-5">
                       <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--accent)] sm:text-xs sm:tracking-[0.26em]">
-                        Pos-evento
+                        Pós-evento
                       </p>
                       <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                        Transformamos o material em conteudo que continua comunicando autoridade.
+                        Transformamos o material em conteúdo que continua comunicando autoridade.
                       </p>
                     </div>
                   </div>

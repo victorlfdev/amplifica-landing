@@ -9,11 +9,11 @@ export function Header() {
             Amplifica
           </span>
           <span className="block truncate font-[family-name:var(--font-display)] text-xl leading-none text-stone-100 sm:text-2xl">
-            Estrategia em cena
+            Estratégia em cena
           </span>
         </a>
 
-        <nav aria-label="Navegacao principal" className="hidden items-center gap-6 lg:flex">
+        <nav aria-label="Navegação principal" className="hidden items-center gap-6 lg:flex">
           {navigationItems.map((item) => (
             <a
               key={item.href}

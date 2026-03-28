@@ -7,11 +7,11 @@ export function Footer() {
             Amplifica
           </p>
           <p className="font-[family-name:var(--font-display)] text-xl leading-none text-stone-100 sm:text-2xl">
-            Audiovisual estrategico
+            Audiovisual estratégico
           </p>
         </div>
         <p className="max-w-md leading-7">
-          Transformamos eventos em conteudo, posicionamento e impacto duradouro.
+          Transformamos eventos em conteúdo, posicionamento e impacto duradouro.
         </p>
       </div>
     </footer>

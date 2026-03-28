@@ -6,15 +6,15 @@ export function FinalCtaSection() {
     <SectionShell
       id="contato"
       eyebrow="CTA final"
-      title="Se o seu evento precisa gerar posicionamento, a conversa comeca aqui."
-      description="Vamos estruturar uma cobertura que nao entregue apenas material bruto, mas ativos de comunicacao que continuem trabalhando pela sua marca."
+      title="Se o seu evento precisa gerar posicionamento, a conversa começa aqui."
+      description="Vamos estruturar uma cobertura que não entregue apenas material bruto, mas ativos de comunicação que continuem trabalhando pela sua marca."
     >
       <Reveal>
         <div className="rounded-[1.9rem] border border-[var(--accent)]/20 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.04))] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.34)] sm:rounded-[2.2rem] sm:p-8 lg:p-12">
           <div className="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-end lg:justify-between">
             <p className="max-w-2xl text-base leading-7 text-stone-200 sm:text-lg sm:leading-8">
               Solicite uma proposta e entenda como a Amplifica pode transformar o seu
-              proximo evento em conteudo, autoridade e impacto duradouro.
+              próximo evento em conteúdo, autoridade e impacto duradouro.
             </p>
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:gap-4">
               <a
