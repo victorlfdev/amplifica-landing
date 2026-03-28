@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
@@ -99,7 +100,10 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR">
-      <body className={`${manrope.variable} ${cormorant.variable}`}>{children}</body>
+      <body className={`${manrope.variable} ${cormorant.variable}`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
