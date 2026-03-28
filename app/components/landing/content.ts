@@ -26,12 +26,32 @@ export type VisualProofItem = {
   imageAlt: string;
 };
 
+export type ContactLink = {
+  label: string;
+  href: string;
+};
+
 export const navigationItems: NavItem[] = [
   { label: "Quem somos", href: "#quem-somos" },
   { label: "Soluções", href: "#solucoes" },
   { label: "Diferencial", href: "#diferencial" },
   { label: "Contato", href: "#contato" },
 ];
+
+export const contactLinks = {
+  whatsapp: {
+    label: "WhatsApp",
+    href: "https://wa.me/5511976589202?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Amplifica.%20Poderiam%20me%20enviar%20uma%20proposta%3F",
+  },
+  instagram: {
+    label: "Instagram",
+    href: "https://instagram.com/amplifica.midias",
+  },
+  email: {
+    label: "E-mail",
+    href: "mailto:amplifica@usd21.org",
+  },
+} satisfies Record<"whatsapp" | "instagram" | "email", ContactLink>;
 
 export const heroHighlights: HighlightItem[] = [
   {

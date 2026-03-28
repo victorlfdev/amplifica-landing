@@ -1,4 +1,4 @@
-import { navigationItems } from "./content";
+import { contactLinks, navigationItems } from "./content";
 
 export function Header() {
   return (
@@ -25,12 +25,24 @@ export function Header() {
           ))}
         </nav>
 
-        <a
-          href="#contato"
-          className="shrink-0 rounded-full border border-white/12 bg-white/4 px-3.5 py-2 text-xs font-medium text-stone-100 hover:border-[var(--accent)]/50 hover:bg-white/8 hover:text-white sm:px-5 sm:py-2.5 sm:text-sm"
-        >
-          Solicitar proposta
-        </a>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href={contactLinks.instagram.href}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden text-sm text-stone-300 hover:text-stone-100 xl:inline-flex"
+          >
+            Instagram
+          </a>
+          <a
+            href={contactLinks.whatsapp.href}
+            target="_blank"
+            rel="noreferrer"
+            className="shrink-0 rounded-full border border-white/12 bg-white/4 px-3.5 py-2 text-xs font-medium text-stone-100 hover:border-[var(--accent)]/50 hover:bg-white/8 hover:text-white sm:px-5 sm:py-2.5 sm:text-sm"
+          >
+            WhatsApp
+          </a>
+        </div>
       </div>
     </header>
   );
