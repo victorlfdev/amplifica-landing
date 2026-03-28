@@ -195,8 +195,8 @@ export function VisualProofSection() {
   return (
     <SectionShell
       eyebrow="Portfólio visual"
-      title="Um showcase editorial para eventos que precisam parecer maiores, mais valiosos e mais memoráveis."
-      description="A seção reúne momentos de palco, bastidores, operação, ambiente institucional e desdobramento de conteúdo em uma composição mais cinematográfica, com profundidade no scroll e presença visual de marca."
+      title="Imagens que mostram como um evento pode continuar gerando posicionamento depois que ele termina."
+      description="Esta seleção reúne palco, bastidores, operação e presença institucional para mostrar como a Amplifica transforma acontecimentos ao vivo em repertório de marca, conteúdo e autoridade."
     >
       <section
         ref={sectionRef}
@@ -212,12 +212,12 @@ export function VisualProofSection() {
         >
           <article className="rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.02))] p-5 shadow-[0_18px_60px_rgba(0,0,0,0.24)] sm:rounded-[2rem] sm:p-6">
             <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--accent)] sm:text-[11px]">
-              Curadoria visual
+              Prova visual estratégica
             </p>
             <div className="mt-4 grid gap-3 text-sm leading-6 text-stone-300 sm:grid-cols-3 sm:text-[0.96rem]">
-              <p>Imagens que sustentam narrativa, marca e percepção institucional.</p>
-              <p>Grid assimétrico com ritmos distintos para criar profundidade no scroll.</p>
-              <p>Hover refinado e transições sutis para elevar o valor percebido sem ruído.</p>
+              <p>Captações orientadas pela narrativa que o evento precisa sustentar.</p>
+              <p>Registros que reforçam contexto, escala e percepção institucional da marca.</p>
+              <p>Material pensado para continuar servindo no pós-evento, nas redes e na comunicação da organização.</p>
             </div>
           </article>
           <article className="rounded-[1.7rem] border border-[var(--accent)]/20 bg-[linear-gradient(180deg,rgba(213,185,138,0.12),rgba(255,255,255,0.03))] p-5 shadow-[0_18px_60px_rgba(0,0,0,0.24)] sm:rounded-[2rem] sm:p-6">
@@ -225,7 +225,7 @@ export function VisualProofSection() {
               Valor percebido
             </p>
             <p className="mt-4 font-[family-name:var(--font-display)] text-[2.15rem] leading-[0.92] text-stone-50 sm:text-[2.5rem]">
-              Presença ao vivo convertida em repertório visual de marca.
+              O evento deixa de ser apenas registro e passa a operar como ativo de comunicação.
             </p>
           </article>
         </motion.div>
