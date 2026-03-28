@@ -15,7 +15,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://amplificamidias.com.br";
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://amplificamidias.com.br");
+
 
 export const viewport: Viewport = {
   themeColor: "#050505",
@@ -58,7 +60,7 @@ export const metadata: Metadata = {
       "Transformamos experiências ao vivo em conteúdo, posicionamento e impacto duradouro para marcas e instituições.",
     images: [
       {
-        url: "/images/OpenGraphImage.jpg",
+        url: "/images/OpenGraphImage.webp",
         width: 1200,
         height: 630,
         alt: "Open Graph da landing page da Amplifica.",
