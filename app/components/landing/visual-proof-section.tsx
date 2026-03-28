@@ -54,8 +54,8 @@ export function VisualProofSection() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.18),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.18))]" />
               <div
                 className={[
-                  "absolute inset-x-3 bottom-3 top-14 rounded-[1.35rem] border border-white/8 bg-transparent sm:inset-x-4 sm:bottom-4 sm:top-16 sm:rounded-[1.6rem]",
-                  featured ? "shadow-[inset_0_0_0_1px_rgba(213,185,138,0.08)]" : "",
+                  "absolute inset-x-3 bottom-3 top-14 rounded-[1.35rem] bg-transparent sm:inset-x-4 sm:bottom-4 sm:top-16 sm:rounded-[1.6rem]",
+                  featured ? "" : "",
                 ].join(" ")}
               />
               <div className="relative flex h-full flex-col justify-between p-5 sm:p-6">
