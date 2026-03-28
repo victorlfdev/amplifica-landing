@@ -58,10 +58,10 @@ export const metadata: Metadata = {
       "Transformamos experiências ao vivo em conteúdo, posicionamento e impacto duradouro para marcas e instituições.",
     images: [
       {
-        url: "/images/Galeria01.webp",
+        url: "/images/OpenGraphImage.webp",
         width: 1200,
-        height: 1500,
-        alt: "Cobertura audiovisual de evento da Amplifica.",
+        height: 630,
+        alt: "Open Graph da landing page da Amplifica.",
       },
     ],
   },
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Amplifica | Audiovisual estratégico para eventos",
     description:
       "Cobertura, direção estratégica e conteúdo de longo prazo para marcas que constroem autoridade com eventos.",
-    images: ["/images/Galeria01.webp"],
+    images: ["/images/OpenGraphImage.webp"],
   },
   robots: {
     index: true,
