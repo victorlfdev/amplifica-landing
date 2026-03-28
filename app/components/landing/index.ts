@@ -1,0 +1,10 @@
+export { AboutSection } from "./about-section";
+export { AudienceSection } from "./audience-section";
+export { FinalCtaSection } from "./final-cta-section";
+export { Footer } from "./footer";
+export { Header } from "./header";
+export { HeroSection } from "./hero-section";
+export { ProblemSection } from "./problem-section";
+export { SolutionsSection } from "./solutions-section";
+export { StrategicDifferentialSection } from "./strategic-differential-section";
+export { VisualProofSection } from "./visual-proof-section";
