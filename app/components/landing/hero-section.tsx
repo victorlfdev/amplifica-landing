@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { heroHighlights } from "./content";
 
@@ -36,6 +37,16 @@ export function HeroSection() {
           className="space-y-8 sm:space-y-10"
         >
           <motion.header variants={spotlightMotion} className="max-w-4xl space-y-5 sm:space-y-6">
+            <div className="flex items-center">
+              <Image
+                src="/images/AmplificaIconeBranco.webp"
+                alt="Ícone da Amplifica"
+                width={56}
+                height={56}
+                priority
+                className="h-12 w-12 object-contain sm:h-14 sm:w-14"
+              />
+            </div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--accent)] sm:text-xs sm:tracking-[0.34em]">
               Audiovisual estratégico para eventos
             </p>
