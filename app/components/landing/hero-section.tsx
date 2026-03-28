@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { heroHighlights } from "./content";
 
 const spotlightMotion = {
@@ -11,6 +11,10 @@ const spotlightMotion = {
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const contentY = useTransform(scrollYProgress, [0, 0.18], [0, -20]);
+  const panelY = useTransform(scrollYProgress, [0, 0.18], [0, 18]);
+  const glowOpacity = useTransform(scrollYProgress, [0, 0.16], [1, 0.4]);
 
   return (
     <section className="border-b border-white/8 px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-20 lg:px-16 lg:pb-28 lg:pt-28">
@@ -28,6 +32,7 @@ export function HeroSection() {
               },
             },
           }}
+          style={prefersReducedMotion ? undefined : { y: contentY }}
           className="space-y-8 sm:space-y-10"
         >
           <motion.header variants={spotlightMotion} className="max-w-4xl space-y-5 sm:space-y-6">
@@ -102,10 +107,17 @@ export function HeroSection() {
               ? { duration: 0 }
               : { duration: 0.95, delay: 0.15, ease: [0.22, 1, 0.36, 1] }
           }
+          style={prefersReducedMotion ? undefined : { y: panelY }}
           className="relative md:mx-auto md:w-full md:max-w-3xl lg:max-w-none"
         >
-          <div className="absolute -right-4 bottom-4 h-20 w-20 rounded-full bg-white/8 blur-3xl sm:-right-6 sm:bottom-6 sm:h-24 sm:w-24" />
-          <div className="absolute -left-8 top-8 hidden h-28 w-28 rounded-full bg-[var(--accent-soft)] blur-3xl lg:block xl:h-36 xl:w-36" />
+          <motion.div
+            style={prefersReducedMotion ? undefined : { opacity: glowOpacity }}
+            className="absolute -right-4 bottom-4 h-20 w-20 rounded-full bg-white/8 blur-3xl sm:-right-6 sm:bottom-6 sm:h-24 sm:w-24"
+          />
+          <motion.div
+            style={prefersReducedMotion ? undefined : { opacity: glowOpacity }}
+            className="absolute -left-8 top-8 hidden h-28 w-28 rounded-full bg-[var(--accent-soft)] blur-3xl lg:block xl:h-36 xl:w-36"
+          />
 
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-3 shadow-[0_22px_80px_rgba(0,0,0,0.36)] sm:rounded-[2.4rem] sm:p-4 md:p-5 lg:p-5">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.24),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_28%)]" />
