@@ -2,6 +2,16 @@
 
 :root {
   color-scheme: dark;
+  --background: #050505;
+  --background-soft: #0c0c0d;
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel-strong: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.1);
+  --text: #f5f1e8;
+  --muted: #b8b0a2;
+  --accent: #d5b98a;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-display: Georgia, serif;
 }
 
 * {
@@ -15,9 +25,12 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #050505;
-  color: #f5f5f5;
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(213, 185, 138, 0.12), transparent 28%),
+    linear-gradient(180deg, #090909 0%, #050505 38%, #030303 100%);
+  color: var(--text);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -30,4 +43,9 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+::selection {
+  background: rgba(213, 185, 138, 0.28);
+  color: #fffaf0;
 }

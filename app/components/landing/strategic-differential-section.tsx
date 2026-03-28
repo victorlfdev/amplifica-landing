@@ -10,13 +10,16 @@ export function StrategicDifferentialSection() {
       description="A cobertura audiovisual faz parte de um raciocínio maior: o que comunicar, o que captar e como transformar esse material em valor de marca."
     >
       <div className="grid gap-6 md:grid-cols-3">
-        {differentialItems.map((item) => (
+        {differentialItems.map((item, index) => (
           <article
             key={item.title}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6"
+            className="rounded-[2rem] border border-white/8 bg-white/[0.03] p-8"
           >
-            <h3 className="text-lg font-semibold">{item.title}</h3>
-            <p className="mt-3 text-sm leading-6 text-neutral-300">{item.description}</p>
+            <p className="text-xs uppercase tracking-[0.28em] text-stone-500">
+              Pilar 0{index + 1}
+            </p>
+            <h3 className="mt-4 text-2xl font-semibold text-stone-100">{item.title}</h3>
+            <p className="mt-4 text-base leading-8 text-stone-300">{item.description}</p>
           </article>
         ))}
       </div>

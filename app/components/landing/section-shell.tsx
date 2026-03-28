@@ -14,18 +14,25 @@ export function SectionShell({
   children,
 }: SectionShellProps) {
   return (
-    <section id={id} className="border-b border-white/10 px-6 py-16 sm:px-10 lg:px-16">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
-        <div className="max-w-3xl space-y-4">
+    <section
+      id={id}
+      className="border-b border-white/8 px-6 py-18 sm:px-10 sm:py-24 lg:px-16 lg:py-28"
+    >
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 lg:gap-14">
+        <div className="max-w-3xl space-y-5">
           {eyebrow ? (
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-400">
+            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[var(--accent)]">
               {eyebrow}
             </p>
           ) : null}
-          <div className="space-y-3">
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
+          <div className="space-y-4">
+            <h2 className="font-[family-name:var(--font-display)] text-4xl leading-none tracking-tight text-stone-100 sm:text-5xl lg:text-6xl">
+              {title}
+            </h2>
             {description ? (
-              <p className="text-base leading-7 text-neutral-300">{description}</p>
+              <p className="max-w-2xl text-base leading-8 text-stone-300 sm:text-lg">
+                {description}
+              </p>
             ) : null}
           </div>
         </div>
