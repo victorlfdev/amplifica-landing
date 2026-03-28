@@ -107,7 +107,7 @@ function PortfolioColumn({
                 priority={order < 2}
                 className={[
                   "object-cover opacity-48 transition duration-700 ease-out",
-                  "group-hover:scale-[1.05] group-hover:opacity-[0.88]",
+                  "group-hover:scale-[1.08] group-hover:opacity-100",
                   imageAlignment[item.align ?? "center"],
                 ].join(" ")}
               />
@@ -139,10 +139,10 @@ function PortfolioColumn({
 
               <div className="space-y-4 transition-opacity duration-500 group-hover:opacity-50">
                 <div className="space-y-3">
-                  <h3 className="max-w-md font-[family-name:var(--font-display)] text-[2rem] leading-[0.92] tracking-tight text-stone-50 transition-opacity duration-500 group-hover:opacity-75 sm:text-[2.4rem]">
+                  <h3 className="max-w-md font-[family-name:var(--font-display)] text-[2rem] leading-[0.92] tracking-tight text-stone-50 transition-opacity duration-500 group-hover:opacity-25 sm:text-[2.4rem]">
                     {item.title}
                   </h3>
-                  <p className="max-w-md text-sm leading-6 text-stone-200/92 transition-opacity duration-500 group-hover:opacity-60 sm:text-[0.98rem] sm:leading-7">
+                  <p className="max-w-md text-sm leading-6 text-stone-200/92 transition-opacity duration-500 group-hover:opacity-25 sm:text-[0.98rem] sm:leading-7">
                     {item.description}
                   </p>
                 </div>
