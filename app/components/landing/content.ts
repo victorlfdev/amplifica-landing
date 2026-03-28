@@ -79,8 +79,7 @@ export const visualProofItems: VisualProofItem[] = [
   {
     label: "Evento principal",
     title: "Cobertura pensada para presença e escala",
-    description:
-      "Captação orientada para palco, público e atmosfera, com leitura clara do que sustenta percepção de valor.",
+    description: "Palco, público e atmosfera registrados com direção e intenção.",
     highlight: "Narrativa visual do evento",
     imageSrc: "/images/Galeria01.webp",
     imageAlt: "Cobertura audiovisual de evento com palco iluminado e público presente.",
@@ -90,8 +89,7 @@ export const visualProofItems: VisualProofItem[] = [
   {
     label: "Presença institucional",
     title: "Ambientes que comunicam solidez",
-    description:
-      "Arquitetura visual, recepção e detalhes de marca registrados para reforçar consistência institucional.",
+    description: "Arquitetura, recepção e marca compondo uma presença institucional sólida.",
     highlight: "Percepção premium no detalhe",
     imageSrc: "/images/Galeria02.webp",
     imageAlt: "Ambiente institucional de evento registrado pela Amplifica.",
@@ -101,8 +99,7 @@ export const visualProofItems: VisualProofItem[] = [
   {
     label: "Operação técnica",
     title: "Bastidores conduzidos com precisão",
-    description:
-      "Equipe, equipamentos e timing trabalhando com discrição para sustentar qualidade e fluidez na entrega.",
+    description: "Equipe e operação atuando com discrição, ritmo e controle.",
     highlight: "Execução com padrão profissional",
     imageSrc: "/images/Galeria03.webp",
     imageAlt: "Equipe em ação durante operação audiovisual de evento.",
@@ -112,8 +109,7 @@ export const visualProofItems: VisualProofItem[] = [
   {
     label: "Pós-evento",
     title: "Conteúdo que continua depois do palco",
-    description:
-      "Material captado para seguir ativo em campanhas, redes sociais, propostas e comunicação institucional.",
+    description: "Imagens preparadas para seguir gerando valor além do evento.",
     highlight: "Ativo de marca de longo prazo",
     imageSrc: "/images/PosEvento.webp",
     imageAlt: "Conteúdo visual de marca captado durante evento.",
@@ -123,8 +119,7 @@ export const visualProofItems: VisualProofItem[] = [
   {
     label: "Ritmo de produção",
     title: "Movimento, coordenação e resposta rápida",
-    description:
-      "Recortes de bastidores que mostram domínio operacional sem roubar a atenção da experiência principal.",
+    description: "Bastidores que revelam domínio operacional sem ruído.",
     highlight: "Cobertura viva e controlada",
     imageSrc: "/images/Galeria04.webp",
     imageAlt: "Bastidores de operação audiovisual mostrando equipe e equipamentos.",
@@ -134,8 +129,7 @@ export const visualProofItems: VisualProofItem[] = [
   {
     label: "Projeto em destaque",
     title: "Cada projeto vira repertório visual da marca",
-    description:
-      "Uma entrega pensada para converter presença física em memória institucional, autoridade e recorrência.",
+    description: "Projetos transformados em memória, autoridade e recorrência visual.",
     highlight: "Resultados além do dia do evento",
     imageSrc: "/images/ProjetoDestaque.webp",
     imageAlt: "Projeto em destaque com ambiente institucional e iluminação cênica.",

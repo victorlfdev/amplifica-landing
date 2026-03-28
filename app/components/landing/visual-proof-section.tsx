@@ -122,11 +122,11 @@ function PortfolioColumn({
 
             <div className="relative flex h-full flex-col justify-between p-5 sm:p-6">
               <div className="flex items-start justify-between gap-4">
-                <div className="space-y-3">
-                  <span className="inline-flex rounded-full border border-white/12 bg-black/25 px-3 py-1 text-[10px] uppercase tracking-[0.26em] text-stone-200/80 backdrop-blur-sm sm:text-[11px]">
+                <div className="space-y-3 transition-opacity duration-500 group-hover:opacity-80">
+                  <span className="inline-flex rounded-full border border-white/12 bg-black/25 px-3 py-1 text-[10px] uppercase tracking-[0.26em] text-stone-200/80 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-70 sm:text-[11px]">
                     {item.label}
                   </span>
-                  <p className="max-w-[14rem] text-[11px] uppercase tracking-[0.26em] text-[var(--accent)]/90 sm:text-xs">
+                  <p className="max-w-[14rem] text-[11px] uppercase tracking-[0.26em] text-[var(--accent)]/90 transition-opacity duration-500 group-hover:opacity-65 sm:text-xs">
                     {item.highlight}
                   </p>
                 </div>
@@ -137,16 +137,16 @@ function PortfolioColumn({
                 />
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 transition-opacity duration-500 group-hover:opacity-72">
                 <div className="space-y-3">
-                  <h3 className="max-w-md font-[family-name:var(--font-display)] text-[2rem] leading-[0.92] tracking-tight text-stone-50 sm:text-[2.4rem]">
+                  <h3 className="max-w-md font-[family-name:var(--font-display)] text-[2rem] leading-[0.92] tracking-tight text-stone-50 transition-opacity duration-500 group-hover:opacity-75 sm:text-[2.4rem]">
                     {item.title}
                   </h3>
-                  <p className="max-w-md text-sm leading-6 text-stone-200/92 sm:text-[0.98rem] sm:leading-7">
+                  <p className="max-w-md text-sm leading-6 text-stone-200/92 transition-opacity duration-500 group-hover:opacity-60 sm:text-[0.98rem] sm:leading-7">
                     {item.description}
                   </p>
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-[11px] uppercase tracking-[0.22em] text-stone-300/85 backdrop-blur-sm">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-[11px] uppercase tracking-[0.22em] text-stone-300/85 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-60">
                   <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/85" />
                   Captação estratégica
                 </div>
