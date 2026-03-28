@@ -5,6 +5,7 @@ import {
   Footer,
   Header,
   HeroSection,
+  MobileBottomNav,
   ProblemSection,
   SolutionsSection,
   StrategicDifferentialSection,
@@ -29,6 +30,7 @@ export default function Home() {
         <FinalCtaSection />
       </main>
       <Footer />
+      <MobileBottomNav />
     </div>
   );
 }
