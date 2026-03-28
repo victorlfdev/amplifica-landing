@@ -48,7 +48,7 @@ export function VisualProofSection() {
                 fill
                 sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, (max-width: 1535px) 50vw, 25vw"
                 priority={index === 0}
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] opacity-40 group-hover:opacity-90"
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.06),rgba(5,5,5,0.34)_42%,rgba(5,5,5,0.82)_100%)]" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.18),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.18))]" />
@@ -68,7 +68,7 @@ export function VisualProofSection() {
                 <div className="max-w-sm space-y-3 transition-transform duration-300 group-hover:-translate-y-0.5">
                   <h3
                     className={[
-                      "font-[family-name:var(--font-display)] leading-[0.94] text-stone-50",
+                      "font-[family-name:var(--font-display)] leading-[0.94] text-stone-50 group-hover:text-shadow-[0_4px_16px_rgba(0,0,0,0.48)]",
                       featured ? "text-[2.2rem] sm:text-5xl" : "text-[2rem] sm:text-3xl",
                     ].join(" ")}
                   >
