@@ -102,15 +102,15 @@ export function HeroSection() {
               ? { duration: 0 }
               : { duration: 0.95, delay: 0.15, ease: [0.22, 1, 0.36, 1] }
           }
-          className="relative"
+          className="relative md:mx-auto md:w-full md:max-w-3xl lg:max-w-none"
         >
           <div className="absolute -right-4 bottom-4 h-20 w-20 rounded-full bg-white/8 blur-3xl sm:-right-6 sm:bottom-6 sm:h-24 sm:w-24" />
           <div className="absolute -left-8 top-8 hidden h-28 w-28 rounded-full bg-[var(--accent-soft)] blur-3xl lg:block xl:h-36 xl:w-36" />
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-3 shadow-[0_22px_80px_rgba(0,0,0,0.36)] sm:rounded-[2.4rem] sm:p-4 lg:p-5">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02))] p-3 shadow-[0_22px_80px_rgba(0,0,0,0.36)] sm:rounded-[2.4rem] sm:p-4 md:p-5 lg:p-5">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.24),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_28%)]" />
-            <div className="relative grid gap-3 sm:gap-4">
-              <div className="overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0b0d] p-5 sm:rounded-[2rem] sm:p-6 lg:p-7">
+            <div className="relative grid gap-3 sm:gap-4 md:gap-5">
+              <div className="overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0b0d] p-5 sm:rounded-[2rem] sm:p-6 md:p-7 lg:p-7">
                 <div className="flex items-center justify-between gap-4">
                   <p className="text-[10px] uppercase tracking-[0.26em] text-[var(--accent)] sm:text-[11px] sm:tracking-[0.32em]">
                     Antes, durante e depois
@@ -120,30 +120,30 @@ export function HeroSection() {
                   </span>
                 </div>
 
-                <div className="mt-6 space-y-5 sm:mt-8 sm:space-y-6">
-                  <div className="space-y-3">
+                <div className="mt-6 space-y-5 sm:mt-8 sm:space-y-6 md:mt-7 md:space-y-7">
+                  <div className="space-y-3 md:space-y-4">
                     <p className="text-xs uppercase tracking-[0.24em] text-stone-500 sm:text-sm sm:tracking-[0.28em]">
                       Visão estratégica
                     </p>
-                    <p className="max-w-[13ch] font-[family-name:var(--font-display)] text-[2.5rem] leading-[0.94] text-stone-100 sm:text-[3.25rem]">
+                    <p className="max-w-[13ch] font-[family-name:var(--font-display)] text-[2.5rem] leading-[0.94] text-stone-100 sm:text-[3.25rem] md:max-w-[15ch] md:text-[3rem] lg:text-[3.25rem]">
                       Cada evento pode render muito mais do que registro.
                     </p>
                   </div>
 
-                  <div className="grid gap-3 sm:grid-cols-[1.1fr_0.9fr]">
-                    <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] p-4 transition-colors duration-200 hover:border-white/12 hover:bg-white/[0.06] sm:rounded-[1.5rem] sm:p-5">
+                  <div className="grid gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+                    <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] p-4 transition-colors duration-200 hover:border-white/12 hover:bg-white/[0.06] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[172px] md:flex-col md:justify-between md:p-5">
                       <p className="text-[11px] uppercase tracking-[0.22em] text-stone-500 sm:text-xs sm:tracking-[0.26em]">
                         Planejamento
                       </p>
-                      <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
+                      <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7 md:mt-5">
                         Definimos o que precisa ser captado para sustentar narrativa e valor de marca.
                       </p>
                     </div>
-                    <div className="rounded-[1.3rem] border border-[var(--accent)]/16 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.03))] p-4 transition-colors duration-200 hover:border-[var(--accent)]/28 hover:bg-[linear-gradient(180deg,rgba(213,185,138,0.18),rgba(255,255,255,0.04))] sm:rounded-[1.5rem] sm:p-5">
+                    <div className="rounded-[1.3rem] border border-[var(--accent)]/16 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.03))] p-4 transition-colors duration-200 hover:border-[var(--accent)]/28 hover:bg-[linear-gradient(180deg,rgba(213,185,138,0.18),rgba(255,255,255,0.04))] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[172px] md:flex-col md:justify-between md:p-5">
                       <p className="text-[11px] uppercase tracking-[0.22em] text-[var(--accent)] sm:text-xs sm:tracking-[0.26em]">
                         Pós-evento
                       </p>
-                      <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
+                      <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7 md:mt-5">
                         Transformamos o material em conteúdo que continua comunicando autoridade.
                       </p>
                     </div>
@@ -151,7 +151,10 @@ export function HeroSection() {
                 </div>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-3 sm:gap-4" aria-label="Destaques da proposta">
+              <div
+                className="grid gap-3 sm:grid-cols-3 sm:gap-4 md:gap-3.5"
+                aria-label="Destaques da proposta"
+              >
                 {heroHighlights.map((item, index) => (
                   <motion.article
                     key={item.title}
@@ -166,15 +169,17 @@ export function HeroSection() {
                             ease: [0.22, 1, 0.36, 1],
                           }
                     }
-                    className="rounded-[1.4rem] border border-white/8 bg-black/25 p-4 backdrop-blur-sm transition-colors duration-200 hover:border-white/12 hover:bg-black/30 sm:rounded-[1.6rem] sm:p-5"
+                    className="rounded-[1.4rem] border border-white/8 bg-black/25 p-4 backdrop-blur-sm transition-colors duration-200 hover:border-white/12 hover:bg-black/30 sm:rounded-[1.6rem] sm:p-5 md:flex md:min-h-[184px] md:flex-col md:justify-between md:px-4 md:py-5 lg:p-5"
                   >
-                    <p className="text-[10px] uppercase tracking-[0.26em] text-stone-500 sm:text-[11px] sm:tracking-[0.3em]">
-                      0{index + 1}
-                    </p>
-                    <h2 className="mt-3 text-base font-semibold text-stone-100 sm:text-lg">
-                      {item.title}
-                    </h2>
-                    <p className="mt-3 text-sm leading-6 text-stone-300 sm:leading-7">
+                    <div className="space-y-3 md:space-y-3.5">
+                      <p className="text-[10px] uppercase tracking-[0.26em] text-stone-500 sm:text-[11px] sm:tracking-[0.3em]">
+                        0{index + 1}
+                      </p>
+                      <h2 className="text-base font-semibold leading-5 text-stone-100 sm:text-lg md:text-[1.02rem] md:leading-6">
+                        {item.title}
+                      </h2>
+                    </div>
+                    <p className="mt-3 text-sm leading-6 text-stone-300 sm:leading-7 md:mt-5 md:text-[0.92rem] md:leading-6">
                       {item.description}
                     </p>
                   </motion.article>
