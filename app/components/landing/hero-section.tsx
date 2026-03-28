@@ -130,7 +130,7 @@ export function HeroSection() {
                     </p>
                   </div>
 
-                  <div className="grid gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+                  <div className="grid gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-1 lg:gap-5" aria-label="Destaques da visão estratégica">
                     <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] p-4 transition-colors duration-200 hover:border-white/12 hover:bg-white/[0.06] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[188px] md:flex-col md:justify-between md:p-5 lg:min-h-[172px]">
                       <p className="text-[11px] uppercase tracking-[0.22em] text-stone-500 sm:text-xs sm:tracking-[0.26em]">
                         Planejamento
@@ -152,7 +152,7 @@ export function HeroSection() {
               </div>
 
               <div
-                className="grid gap-3 sm:grid-cols-3 sm:gap-4 md:gap-3 lg:gap-4"
+                className="grid gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-1 md:gap-3 lg:grid-cols-1 lg:gap-4"
                 aria-label="Destaques da proposta"
               >
                 {heroHighlights.map((item, index) => (
