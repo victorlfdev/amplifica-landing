@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     title: "Amplifica | Audiovisual estratégico para eventos",
     description:
       "Cobertura, direção estratégica e conteúdo de longo prazo para marcas que constroem autoridade com eventos.",
-    images: ["/images/OpenGraphImage.webp"],
+    images: ["/images/OpenGraphImage.jpg"],
   },
   robots: {
     index: true,
