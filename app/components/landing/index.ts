@@ -6,6 +6,7 @@ export { Header } from "./header";
 export { HeroSection } from "./hero-section";
 export { MobileBottomNav } from "./mobile-bottom-nav";
 export { ProblemSection } from "./problem-section";
+export { default as ScrollVideoHero } from "./scroll-video-hero";
 export { SolutionsSection } from "./solutions-section";
 export { StrategicDifferentialSection } from "./strategic-differential-section";
 export { VisualProofSection } from "./visual-proof-section";

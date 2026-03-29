@@ -1,16 +1,43 @@
 import { contactLinks, navigationItems } from "./content";
 
+function InstagramIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3.5" y="3.5" width="17" height="17" rx="4.25" />
+      <circle cx="12" cy="12" r="4.25" />
+      <circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="currentColor"
+    >
+      <path d="M19.05 4.93A9.85 9.85 0 0 0 12.02 2C6.6 2 2.2 6.4 2.2 11.82c0 1.73.45 3.42 1.31 4.92L2 22l5.42-1.42a9.77 9.77 0 0 0 4.6 1.17h.01c5.42 0 9.82-4.4 9.82-9.82 0-2.62-1.02-5.08-2.8-6.98Zm-7.03 15.16h-.01a8.13 8.13 0 0 1-4.14-1.13l-.3-.18-3.22.84.86-3.14-.2-.32a8.15 8.15 0 0 1-1.25-4.34c0-4.5 3.66-8.16 8.17-8.16 2.17 0 4.21.84 5.74 2.38a8.1 8.1 0 0 1 2.39 5.78c0 4.5-3.66 8.17-8.04 8.27Zm4.48-6.12c-.24-.12-1.43-.71-1.65-.78-.22-.08-.38-.12-.54.12-.16.23-.62.77-.76.93-.14.15-.28.17-.52.06-.24-.12-1-.37-1.9-1.18-.7-.62-1.17-1.38-1.31-1.62-.14-.23-.01-.35.1-.47.1-.1.24-.27.36-.4.12-.14.16-.23.24-.39.08-.15.04-.29-.02-.4-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.4h-.46c-.16 0-.4.06-.62.29-.22.23-.84.82-.84 1.99 0 1.17.86 2.3.98 2.46.12.15 1.68 2.57 4.06 3.6.57.25 1.02.39 1.37.5.58.18 1.1.15 1.52.09.46-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.09-.22-.15-.46-.27Z" />
+    </svg>
+  );
+}
+
 export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-white/8 bg-black/45 px-5 py-4 backdrop-blur-xl sm:px-8 sm:py-5 lg:px-16">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 sm:gap-6">
         <a href="#top" className="min-w-0 flex-1 space-y-1 md:flex-none">
-          <span className="block text-[10px] uppercase tracking-[0.28em] text-[var(--accent)] sm:text-[11px] sm:tracking-[0.34em]">
-            Amplifica
-          </span>
-          <span className="block truncate font-[family-name:var(--font-display)] text-xl leading-none text-stone-100 sm:text-2xl">
-            Estratégia em cena
-          </span>
+          <img src="/images/AmplificaTipografiaBranco.webp" alt="Logo da Amplifica" className="h-6 w-auto object-contain sm:h-8" />
         </a>
 
         <nav aria-label="Navegação principal" className="hidden items-center gap-6 lg:flex">
@@ -25,24 +52,25 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3 lg:min-w-[220px] lg:justify-end">
+        <div className="flex items-center gap-2 sm:gap-3 lg:min-w-[280px] lg:justify-end">
           <a
             href={contactLinks.instagram.href}
             target="_blank"
             rel="noreferrer"
             aria-label="Abrir Instagram da Amplifica"
-            className="hidden text-sm text-stone-300 hover:text-stone-100 lg:inline-flex"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/4 text-stone-300 transition-colors duration-200 hover:border-white/20 hover:bg-white/8 hover:text-stone-100"
           >
-            Instagram
+            <InstagramIcon />
           </a>
           <a
             href={contactLinks.whatsapp.href}
             target="_blank"
             rel="noreferrer"
             aria-label="Falar com a Amplifica no WhatsApp"
-            className="shrink-0 rounded-full border border-white/12 bg-white/4 px-3.5 py-2 text-xs font-medium text-stone-100 hover:border-[var(--accent)]/50 hover:bg-white/8 hover:text-white sm:px-5 sm:py-2.5 sm:text-sm"
+            className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-3 text-[0.78rem] font-semibold text-stone-950 shadow-[0_10px_30px_rgba(213,185,138,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 sm:px-4"
           >
-            WhatsApp
+            <WhatsAppIcon />
+            <span className="hidden sm:inline">Solicitar proposta</span>
           </a>
         </div>
       </div>

@@ -1,8 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { heroHighlights } from "./content";
+import {ScrollVideoHero} from "./index";
 
 const spotlightMotion = {
   initial: { opacity: 0, y: 28 },
@@ -17,12 +23,14 @@ export function HeroSection() {
   const panelY = useTransform(scrollYProgress, [0, 0.18], [0, 18]);
   const glowOpacity = useTransform(scrollYProgress, [0, 0.16], [1, 0.4]);
 
-  return (
+  return (   
     <section className="border-b border-white/8 px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-20 lg:px-16 lg:pb-28 lg:pt-28">
+        
       <div
         id="top"
         className="mx-auto grid w-full max-w-6xl gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(360px,0.92fr)] lg:items-center lg:gap-14"
       >
+        
         <motion.div
           initial="initial"
           animate="animate"
@@ -36,8 +44,12 @@ export function HeroSection() {
           style={prefersReducedMotion ? undefined : { y: contentY }}
           className="space-y-8 sm:space-y-10"
         >
-          <motion.header variants={spotlightMotion} className="max-w-4xl space-y-5 sm:space-y-6">
-            <div className="flex items-center">
+          
+          <motion.header
+            variants={spotlightMotion}
+            className="max-w-4xl space-y-5 sm:space-y-6"
+          >
+            <div className="flex items-center gap-3 sm:gap-3">
               <Image
                 src="/images/AmplificaIconeBranco.webp"
                 alt="Ícone da Amplifica"
@@ -45,6 +57,14 @@ export function HeroSection() {
                 height={56}
                 priority
                 className="h-12 w-12 object-contain sm:h-14 sm:w-14"
+              />
+              <Image
+                src="/images/TipografiaAbranco.png"
+                alt="Ícone da Amplifica"
+                width={120}
+                height={32}
+                priority
+                className="h-8 w-auto object-contain sm:h-12 mt-3"
               />
             </div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--accent)] sm:text-xs sm:tracking-[0.34em]">
@@ -54,9 +74,9 @@ export function HeroSection() {
               Eventos que não terminam no palco.
             </h1>
             <p className="max-w-2xl text-base leading-7 text-stone-300 sm:text-lg sm:leading-8 lg:text-xl">
-              A Amplifica transforma experiências ao vivo em conteúdo, posicionamento e
-              impacto duradouro para marcas, instituições e organizações que precisam
-              comunicar com mais autoridade.
+              A Amplifica transforma experiências ao vivo em conteúdo,
+              posicionamento e impacto duradouro para marcas, instituições e
+              organizações que precisam comunicar com mais autoridade.
             </p>
           </motion.header>
 
@@ -88,7 +108,8 @@ export function HeroSection() {
                 Para quem
               </dt>
               <dd className="text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                Marcas e instituições que constroem autoridade por meio de eventos.
+                Marcas e instituições que constroem autoridade por meio de
+                eventos.
               </dd>
             </div>
             <div className="space-y-2">
@@ -96,7 +117,8 @@ export function HeroSection() {
                 O que entregamos
               </dt>
               <dd className="text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                Direção, cobertura e desdobramento estratégico do material captado.
+                Direção, cobertura e desdobramento estratégico do material
+                captado.
               </dd>
             </div>
             <div className="space-y-2">
@@ -104,14 +126,17 @@ export function HeroSection() {
                 Resultado
               </dt>
               <dd className="text-sm leading-6 text-stone-200 sm:text-base sm:leading-7">
-                Mais presença, mais clareza institucional e mais valor percebido.
+                Mais presença, mais clareza institucional e mais valor
+                percebido.
               </dd>
             </div>
           </motion.dl>
         </motion.div>
 
         <motion.div
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, x: 36 }}
+          initial={
+            prefersReducedMotion ? { opacity: 1 } : { opacity: 0, x: 36 }
+          }
           animate={{ opacity: 1, x: 0 }}
           transition={
             prefersReducedMotion
@@ -153,13 +178,17 @@ export function HeroSection() {
                     </p>
                   </div>
 
-                  <div className="grid gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-1 lg:gap-5" aria-label="Destaques da visão estratégica">
+                  <div
+                    className="grid gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-1 lg:gap-5"
+                    aria-label="Destaques da visão estratégica"
+                  >
                     <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] p-4 transition-colors duration-200 hover:border-white/12 hover:bg-white/[0.06] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[188px] md:flex-col md:justify-between md:p-5 lg:min-h-[172px]">
                       <p className="text-[11px] uppercase tracking-[0.22em] text-stone-500 sm:text-xs sm:tracking-[0.26em]">
                         Planejamento
                       </p>
                       <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7 md:mt-5 md:max-w-[24ch] md:text-[0.96rem] md:leading-6 lg:max-w-none lg:text-base lg:leading-7">
-                        Definimos o que precisa ser captado para sustentar narrativa e valor de marca.
+                        Definimos o que precisa ser captado para sustentar
+                        narrativa e valor de marca.
                       </p>
                     </div>
                     <div className="rounded-[1.3rem] border border-[var(--accent)]/16 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.03))] p-4 transition-colors duration-200 hover:border-[var(--accent)]/28 hover:bg-[linear-gradient(180deg,rgba(213,185,138,0.18),rgba(255,255,255,0.04))] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[188px] md:flex-col md:justify-between md:p-5 lg:min-h-[172px]">
@@ -167,7 +196,8 @@ export function HeroSection() {
                         Pós-evento
                       </p>
                       <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7 md:mt-5 md:max-w-[23ch] md:text-[0.94rem] md:leading-6 lg:max-w-none lg:text-base lg:leading-7">
-                        Transformamos o material em conteúdo que continua comunicando autoridade.
+                        Transformamos o material em conteúdo que continua
+                        comunicando autoridade.
                       </p>
                     </div>
                   </div>
@@ -181,7 +211,11 @@ export function HeroSection() {
                 {heroHighlights.map((item, index) => (
                   <motion.article
                     key={item.title}
-                    initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 22 }}
+                    initial={
+                      prefersReducedMotion
+                        ? { opacity: 1 }
+                        : { opacity: 0, y: 22 }
+                    }
                     animate={{ opacity: 1, y: 0 }}
                     transition={
                       prefersReducedMotion
