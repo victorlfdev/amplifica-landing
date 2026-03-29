@@ -91,32 +91,6 @@ export default function ScrollVideoHero() {
         >
           <source src="/output.mp4" type="video/mp4" />
         </video>
-
-        <motion.div
-          className="absolute inset-0 bg-black"
-          style={{ opacity: overlayOpacity }}
-        />
-
-        <div className="relative z-10 flex h-full items-center justify-center px-6">
-          <motion.div
-            className="max-w-4xl text-center"
-            style={{ opacity: textOpacity, y: textY }}
-          >
-            <p className="text-sm md:text-base uppercase tracking-[0.35em] text-zinc-300">
-              Sua Marca
-            </p>
-
-            <h1 className="mt-6 text-5xl md:text-7xl font-semibold tracking-tight leading-tight">
-              Vídeo reagindo
-              <br />
-              ao scroll
-            </h1>
-
-            <p className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-zinc-200 leading-relaxed">
-              Hero com scrub de vídeo baseado no progresso do scroll.
-            </p>
-          </motion.div>
-        </div>
       </div>
     </section>
   );
