@@ -146,10 +146,6 @@ function PortfolioColumn({
                     {item.description}
                   </p>
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-[11px] uppercase tracking-[0.22em] text-stone-300/85 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-60">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]/85" />
-                  Captação estratégica
-                </div>
               </div>
             </div>
           </motion.article>
