@@ -104,7 +104,7 @@ export default function ScrollVideoHero() {
           style={{ opacity: overlayOpacity }}
         />
 
-        <div className="relative z-10 flex h-full items-center justify-center px-5 sm:px-6 md:px-8">
+        <div className="relative z-10 flex h-full mt-20 justify-center px-5 sm:px-6 md:px-8">
           <motion.div
             className="w-full max-w-5xl text-center"
             style={{ opacity: textOpacity, y: textY }}
@@ -112,9 +112,12 @@ export default function ScrollVideoHero() {
             <span className="inline-flex max-w-full items-center justify-center rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/8 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--accent)] sm:px-4 sm:text-[10px] sm:tracking-[0.24em]">
               Amplifica | Audiovisual estratégico para eventos
             </span>
-            <h1 className="mb-6 mt-6 font-headline text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:mt-8 sm:text-5xl md:mb-8 md:text-7xl lg:text-8xl xl:text-9xl">
+            <h1 className="mb-6 mt-6 font-headline text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:mt-8 sm:text-5xl md:mb-8 md:text-7xl lg:text-8xl xl:text-9xl">
               Criando Masterpieces{" "}
-              <span className="text-[#D5B98A] italic font-light text-shadow-[0_0_10px_rgba(213,185,138,0.2)]">
+              <span
+                className="text-[#D5B98A]/90 italic font-[200] text-shadow-[0_0_10px_rgba(213,185,138,0.1)]"
+                style={{ fontWeight: 200, fontVariationSettings: '"wght" 200' }}
+              >
                 Audiovisuais.
               </span>
             </h1>
@@ -124,12 +127,18 @@ export default function ScrollVideoHero() {
               impressionantes que captam a atenção.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-4 sm:mt-10 sm:gap-5 md:mt-12 md:flex-row md:gap-6">
-              <button className="w-full rounded-full bg-primary px-7 py-4 font-headline text-xs font-bold uppercase tracking-[0.22em] text-on-primary transition-transform duration-500 hover:scale-105 sm:w-auto sm:px-10 sm:py-5 sm:text-sm sm:tracking-widest">
+              <a
+                href="#portfolio"
+                className="w-full rounded-full bg-primary px-7 py-4 text-center font-headline text-xs font-bold uppercase tracking-[0.22em] text-on-primary transition-transform duration-500 hover:scale-105 sm:w-auto sm:px-10 sm:py-5 sm:text-sm sm:tracking-widest"
+              >
                 Ver Showcase
-              </button>
-              <button className="w-full rounded-full border border-outline-variant/30 px-7 py-4 font-headline text-xs font-bold uppercase tracking-[0.22em] text-white transition-colors hover:bg-white/5 sm:w-auto sm:px-10 sm:py-5 sm:text-sm sm:tracking-widest">
-                Nossos Serviços
-              </button>
+              </a>
+              <a
+                href="#solucoes"
+                className="w-full rounded-full border border-outline-variant/30 px-7 py-4 text-center font-headline text-xs font-bold uppercase tracking-[0.22em] text-white transition-colors hover:bg-white/5 sm:w-auto sm:px-10 sm:py-5 sm:text-sm sm:tracking-widest"
+              >
+                Nossas Soluções
+              </a>
             </div>
           </motion.div>
         </div>

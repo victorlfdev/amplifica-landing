@@ -45,6 +45,7 @@ export function Header() {
             height={28}
             priority
             className="h-6 w-auto object-contain opacity-95 sm:h-7"
+            style={{ width: "auto" }}
           />
         </a>
 

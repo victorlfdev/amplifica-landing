@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { heroHighlights } from "./content";
@@ -12,20 +13,28 @@ const spotlightMotion = {
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll();
-  const contentY = useTransform(scrollYProgress, [0, 0.18], [0, -20]);
-  const panelY = useTransform(scrollYProgress, [0, 0.18], [0, 18]);
-  const glowOpacity = useTransform(scrollYProgress, [0, 0.16], [1, 0.4]);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const contentY = useTransform(scrollYProgress, [0, 1], [18, -20]);
+  const panelY = useTransform(scrollYProgress, [0, 1], [24, 18]);
+  const glowOpacity = useTransform(scrollYProgress, [0, 0.4, 1], [0.45, 1, 0.4]);
 
   return (
-    <section className="border-b border-white/8 px-5 pb-20 pt-14 sm:px-8 sm:pb-24 sm:pt-16 lg:px-16 lg:pb-32 lg:pt-20">
+    <section
+      ref={sectionRef}
+      className="relative border-b border-white/8 px-5 pb-20 pt-14 sm:px-8 sm:pb-24 sm:pt-16 lg:px-16 lg:pb-32 lg:pt-20"
+    >
       <div
         id="top"
         className="mx-auto grid w-full max-w-6xl gap-12 sm:gap-14 lg:grid-cols-[minmax(0,1.04fr)_minmax(360px,0.96fr)] lg:items-center lg:gap-16"
       >
         <motion.div
           initial="initial"
-          animate="animate"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.3 }}
           variants={{
             animate: {
               transition: {
@@ -118,7 +127,8 @@ export function HeroSection() {
 
         <motion.div
           initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, x: 36 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
           transition={
             prefersReducedMotion
               ? { duration: 0 }
@@ -189,7 +199,8 @@ export function HeroSection() {
                   <motion.article
                     key={item.title}
                     initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 22 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.35 }}
                     transition={
                       prefersReducedMotion
                         ? { duration: 0 }

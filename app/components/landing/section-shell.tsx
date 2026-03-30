@@ -29,7 +29,7 @@ export function SectionShell({
             {description ? <p className="body-copy max-w-3xl">{description}</p> : null}
           </div>
         </Reveal>
-        <div className="contents">{children}</div>
+        <div className="relative">{children}</div>
       </div>
     </section>
   );
