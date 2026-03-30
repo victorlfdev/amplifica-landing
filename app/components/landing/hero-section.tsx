@@ -75,24 +75,7 @@ export function HeroSection() {
             </p>
           </motion.header>
 
-          <motion.div
-            variants={spotlightMotion}
-            className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 lg:items-center"
-            aria-label="Ações principais"
-          >
-            <a
-              href="#contato"
-              className="button-primary inline-flex w-full items-center justify-center rounded-full px-6 py-4 text-[0.78rem] font-bold uppercase tracking-[0.18em] transition-all duration-300 sm:w-auto"
-            >
-              Solicitar proposta
-            </a>
-            <a
-              href="#solucoes"
-              className="button-secondary inline-flex w-full items-center justify-center rounded-full px-6 py-4 text-[0.78rem] font-bold uppercase tracking-[0.18em] transition-all duration-300 sm:w-auto"
-            >
-              Conhecer as soluções
-            </a>
-          </motion.div>
+
 
           <motion.dl
             variants={spotlightMotion}
