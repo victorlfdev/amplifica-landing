@@ -95,7 +95,6 @@ export default function ScrollVideoHero() {
           muted
           playsInline
           preload="auto"
-          poster="/images/Galeria01.webp"
         >
           <source src="/output.mp4" type="video/mp4" />
         </video>
@@ -115,7 +114,7 @@ export default function ScrollVideoHero() {
             </span>
             <h1 className="mb-6 mt-6 font-headline text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:mt-8 sm:text-5xl md:mb-8 md:text-7xl lg:text-8xl xl:text-9xl">
               Criando Masterpieces{" "}
-              <span className="text-[#D5B98A] italic font-light text-shadow-[0_0_10px_rgba(213,185,138,0.5)]">
+              <span className="text-[#D5B98A] italic font-light text-shadow-[0_0_10px_rgba(213,185,138,0.2)]">
                 Audiovisuais.
               </span>
             </h1>
