@@ -65,9 +65,9 @@ export function HeroSection() {
               />
             </div>
             <p className="section-kicker">Audiovisual estratégico para eventos</p>
-            <h1 className="max-w-[11ch] text-[3.35rem] font-extrabold leading-[0.88] tracking-[-0.07em] text-stone-100 sm:text-[4.7rem] lg:text-[6.5rem]">
+            <h2 className="max-w-[11ch] text-[3.35rem] font-extrabold leading-[0.88] tracking-[-0.07em] text-stone-100 sm:text-[4.7rem] lg:text-[6.5rem]">
               Eventos que não terminam no palco.
-            </h1>
+            </h2>
             <p className="max-w-2xl text-[1.03rem] leading-8 text-stone-300 sm:text-[1.12rem] sm:leading-9 lg:text-[1.24rem]">
               A Amplifica transforma experiências ao vivo em conteúdo,
               posicionamento e impacto duradouro para marcas, instituições e
@@ -205,8 +205,8 @@ export function HeroSection() {
                       prefersReducedMotion
                         ? { duration: 0 }
                         : {
-                            duration: 0.7,
-                            delay: 0.3 + index * 0.08,
+                            duration: 0.5,
+                            delay: 0.1 + index * 0.08,
                             ease: [0.22, 1, 0.36, 1],
                           }
                     }
