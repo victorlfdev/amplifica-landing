@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "motion/react";
 
+const DESKTOP_BREAKPOINT = "(min-width: 768px)";
 const SNAP_THRESHOLD = 0.45;
 const SEEK_EPSILON = 1 / 60;
 
@@ -20,12 +21,37 @@ export default function ScrollVideoHero() {
   const durationRef = useRef(0);
   const isReadyRef = useRef(false);
 
+  const [isDesktop, setIsDesktop] = useState(false);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
   });
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia(DESKTOP_BREAKPOINT);
+    const syncViewport = () => setIsDesktop(mediaQuery.matches);
+
+    syncViewport();
+    mediaQuery.addEventListener("change", syncViewport);
+
+    return () => mediaQuery.removeEventListener("change", syncViewport);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) {
+      isReadyRef.current = false;
+      durationRef.current = 0;
+      currentTimeRef.current = 0;
+
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+
+      return;
+    }
+
     const video = videoRef.current;
     if (!video) return;
 
@@ -101,27 +127,48 @@ export default function ScrollVideoHero() {
 
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
       }
     };
-  }, []);
+  }, [isDesktop]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     progressRef.current = clamp(latest, 0, 1);
   });
 
   return (
-    <section ref={sectionRef} className="relative h-[250vh] bg-black">
-      <div className="sticky top-0 h-screen overflow-hidden">
-        <video
-          ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
-          muted
-          playsInline
-          preload="auto"
-        >
-          <source src="/output.mp4" type="video/mp4" />
-        </video>
-      </div>
-    </section>
+    <>
+      <section className="relative h-[72svh] min-h-[30rem] bg-black md:hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            className="h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/Galeria01.webp"
+          >
+            <source src="/output.mp4" type="video/mp4" />
+          </video>
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.22),rgba(0,0,0,0.1)_38%,rgba(0,0,0,0.5)_100%)]" />
+        </div>
+      </section>
+
+      <section ref={sectionRef} className="relative hidden h-[250vh] bg-black md:block">
+        <div className="sticky top-0 h-screen overflow-hidden">
+          <video
+            ref={videoRef}
+            className="absolute inset-0 h-full w-full object-cover"
+            muted
+            playsInline
+            preload="auto"
+            poster="/images/Galeria01.webp"
+          >
+            <source src="/output.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+    </>
   );
 }
