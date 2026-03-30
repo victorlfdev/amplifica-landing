@@ -1,119 +1,72 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useMotionValueEvent, useScroll } from "motion/react";
-
-const DESKTOP_BREAKPOINT = "(min-width: 768px)";
-const SNAP_THRESHOLD = 0.45;
-const SEEK_EPSILON = 1 / 60;
-
-function clamp(value: number, min: number, max: number) {
-  return Math.min(Math.max(value, min), max);
-}
+import { useEffect, useRef } from "react";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "motion/react";
 
 export default function ScrollVideoHero() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const rafRef = useRef<number | null>(null);
 
-  const progressRef = useRef(0);
+  const targetTimeRef = useRef(0);
   const currentTimeRef = useRef(0);
   const durationRef = useRef(0);
-  const isReadyRef = useRef(false);
-
-  const [isDesktop, setIsDesktop] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
   });
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia(DESKTOP_BREAKPOINT);
-    const syncViewport = () => setIsDesktop(mediaQuery.matches);
-
-    syncViewport();
-    mediaQuery.addEventListener("change", syncViewport);
-
-    return () => mediaQuery.removeEventListener("change", syncViewport);
-  }, []);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.3, 0.6]);
+  const textOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [1, 1, 0.3, 0],
+  );
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
   useEffect(() => {
-    if (!isDesktop) {
-      isReadyRef.current = false;
-      durationRef.current = 0;
-      currentTimeRef.current = 0;
-
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
-        rafRef.current = null;
-      }
-
-      return;
-    }
-
     const video = videoRef.current;
     if (!video) return;
 
     const syncDuration = () => {
-      if (!Number.isFinite(video.duration) || video.duration <= 0) return;
-
-      durationRef.current = video.duration;
-      isReadyRef.current = true;
+      durationRef.current = video.duration || 0;
     };
 
-    const syncCurrentTime = () => {
-      currentTimeRef.current = video.currentTime || 0;
-    };
+    video.addEventListener("loadedmetadata", syncDuration);
+
+    // Cached videos can already have metadata before the listener is attached.
+    syncDuration();
 
     const prime = async () => {
       try {
         video.muted = true;
-        video.playsInline = true;
         await video.play();
         video.pause();
-        syncDuration();
-        syncCurrentTime();
       } catch {}
     };
 
-    video.addEventListener("loadedmetadata", syncDuration);
-    video.addEventListener("loadeddata", syncDuration);
-    video.addEventListener("canplay", syncDuration);
-    video.addEventListener("seeked", syncCurrentTime);
-
-    syncDuration();
-    syncCurrentTime();
-    void prime();
+    prime();
 
     const tick = () => {
       const videoEl = videoRef.current;
-
-      if (!videoEl || !isReadyRef.current || durationRef.current <= 0) {
+      if (!videoEl || !durationRef.current) {
         rafRef.current = requestAnimationFrame(tick);
         return;
       }
 
-      const maxTime = Math.max(durationRef.current - 0.001, 0);
-      const targetTime = clamp(progressRef.current * durationRef.current, 0, maxTime);
-      const diff = targetTime - currentTimeRef.current;
+      const diff = targetTimeRef.current - currentTimeRef.current;
+      currentTimeRef.current += diff * 0.12;
 
-      let nextTime = currentTimeRef.current;
-
-      if (Math.abs(diff) > SNAP_THRESHOLD) {
-        nextTime = targetTime;
-      } else if (Math.abs(diff) > SEEK_EPSILON) {
-        const smoothing = diff < 0 ? 0.26 : 0.18;
-        nextTime = currentTimeRef.current + diff * smoothing;
+      if (Math.abs(videoEl.currentTime - currentTimeRef.current) > 0.01) {
+        videoEl.currentTime = currentTimeRef.current;
       }
 
-      nextTime = clamp(nextTime, 0, maxTime);
-
-      if (Math.abs(videoEl.currentTime - nextTime) > SEEK_EPSILON) {
-        videoEl.currentTime = nextTime;
-      }
-
-      currentTimeRef.current = nextTime;
       rafRef.current = requestAnimationFrame(tick);
     };
 
@@ -121,54 +74,67 @@ export default function ScrollVideoHero() {
 
     return () => {
       video.removeEventListener("loadedmetadata", syncDuration);
-      video.removeEventListener("loadeddata", syncDuration);
-      video.removeEventListener("canplay", syncDuration);
-      video.removeEventListener("seeked", syncCurrentTime);
-
-      if (rafRef.current) {
-        cancelAnimationFrame(rafRef.current);
-        rafRef.current = null;
-      }
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [isDesktop]);
+  }, []);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    progressRef.current = clamp(latest, 0, 1);
+    if (!durationRef.current) return;
+    targetTimeRef.current = latest * durationRef.current;
   });
 
   return (
-    <>
-      <section className="relative h-[72svh] min-h-[30rem] bg-black md:hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <video
-            className="h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster="/images/Galeria01.webp"
-          >
-            <source src="/output.mp4" type="video/mp4" />
-          </video>
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.22),rgba(0,0,0,0.1)_38%,rgba(0,0,0,0.5)_100%)]" />
-        </div>
-      </section>
+    <section
+      ref={sectionRef}
+      className="relative h-[220svh] bg-black sm:h-[235svh] lg:h-[250vh]"
+    >
+      <div className="sticky top-0 h-[100svh] overflow-hidden">
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover"
+          muted
+          playsInline
+          preload="auto"
+          poster="/images/Galeria01.webp"
+        >
+          <source src="/output.mp4" type="video/mp4" />
+        </video>
 
-      <section ref={sectionRef} className="relative hidden h-[250vh] bg-black md:block">
-        <div className="sticky top-0 h-screen overflow-hidden">
-          <video
-            ref={videoRef}
-            className="absolute inset-0 h-full w-full object-cover"
-            muted
-            playsInline
-            preload="auto"
-            poster="/images/Galeria01.webp"
+        <motion.div
+          className="absolute inset-0 bg-black"
+          style={{ opacity: overlayOpacity }}
+        />
+
+        <div className="relative z-10 flex h-full items-center justify-center px-5 sm:px-6 md:px-8">
+          <motion.div
+            className="w-full max-w-5xl text-center"
+            style={{ opacity: textOpacity, y: textY }}
           >
-            <source src="/output.mp4" type="video/mp4" />
-          </video>
+            <span className="inline-flex max-w-full items-center justify-center rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/8 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--accent)] sm:px-4 sm:text-[10px] sm:tracking-[0.24em]">
+              Amplifica | Audiovisual estratégico para eventos
+            </span>
+            <h1 className="mb-6 mt-6 font-headline text-4xl font-extrabold leading-[0.95] tracking-tight text-white sm:mt-8 sm:text-5xl md:mb-8 md:text-7xl lg:text-8xl xl:text-9xl">
+              Criando Masterpieces{" "}
+              <span className="text-[#D5B98A] italic font-light text-shadow-[0_0_10px_rgba(213,185,138,0.5)]">
+                Audiovisuais.
+              </span>
+            </h1>
+            <p className="mx-auto max-w-xl font-body text-base leading-relaxed text-zinc-400 sm:max-w-2xl sm:text-lg md:text-xl">
+              Produção Audiovisual Premium para Marcas Visionárias.
+              Transformamos complexas narrativas em experiências visuais
+              impressionantes que captam a atenção.
+            </p>
+            <div className="mt-8 flex flex-col justify-center gap-4 sm:mt-10 sm:gap-5 md:mt-12 md:flex-row md:gap-6">
+              <button className="w-full rounded-full bg-primary px-7 py-4 font-headline text-xs font-bold uppercase tracking-[0.22em] text-on-primary transition-transform duration-500 hover:scale-105 sm:w-auto sm:px-10 sm:py-5 sm:text-sm sm:tracking-widest">
+                Ver Showcase
+              </button>
+              <button className="w-full rounded-full border border-outline-variant/30 px-7 py-4 font-headline text-xs font-bold uppercase tracking-[0.22em] text-white transition-colors hover:bg-white/5 sm:w-auto sm:px-10 sm:py-5 sm:text-sm sm:tracking-widest">
+                Nossos Serviços
+              </button>
+            </div>
+          </motion.div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

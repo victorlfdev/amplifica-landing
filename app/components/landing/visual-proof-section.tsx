@@ -194,6 +194,7 @@ export function VisualProofSection() {
 
   return (
     <SectionShell
+      id="portfolio"
       eyebrow="Portfólio visual"
       title="Imagens que mostram como um evento pode continuar gerando posicionamento depois que ele termina."
       description="Esta seleção reúne palco, bastidores, operação e presença institucional para mostrar como a Amplifica transforma acontecimentos ao vivo em repertório de marca, conteúdo e autoridade."
