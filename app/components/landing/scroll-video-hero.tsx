@@ -1,12 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { useMotionValueEvent, useScroll } from "motion/react";
 
 export default function ScrollVideoHero() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -22,10 +17,6 @@ export default function ScrollVideoHero() {
     offset: ["start start", "end end"],
   });
 
-  const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.3, 0.6]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [1, 1, 0.3, 0]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
-
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -35,8 +26,6 @@ export default function ScrollVideoHero() {
     };
 
     video.addEventListener("loadedmetadata", syncDuration);
-
-    // Cached videos can already have metadata before the listener is attached.
     syncDuration();
 
     const prime = async () => {

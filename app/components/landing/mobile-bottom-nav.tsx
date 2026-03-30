@@ -81,7 +81,7 @@ export function MobileBottomNav() {
     <div className="pointer-events-none fixed inset-x-0 bottom-4 z-40 px-4 lg:hidden">
       <nav
         aria-label="Navegação inferior mobile"
-        className="pointer-events-auto mx-auto flex w-full max-w-md items-center justify-between rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(10,10,10,0.88),rgba(5,5,5,0.94))] px-2 py-2 shadow-[0_18px_48px_rgba(0,0,0,0.45)] backdrop-blur-xl supports-[padding:max(0px)]:pb-[max(0.5rem,env(safe-area-inset-bottom))]"
+        className="pointer-events-auto mx-auto flex w-full max-w-md items-center justify-between rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(15,15,16,0.9),rgba(8,8,8,0.96))] px-2 py-2 shadow-[0_18px_48px_rgba(0,0,0,0.45)] backdrop-blur-xl supports-[padding:max(0px)]:pb-[max(0.5rem,env(safe-area-inset-bottom))]"
       >
         {navItems.map((item) => (
           <a
@@ -90,7 +90,7 @@ export function MobileBottomNav() {
             target={item.external ? "_blank" : undefined}
             rel={item.external ? "noreferrer" : undefined}
             aria-label={item.ariaLabel}
-            className="flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-[1.15rem] px-2 py-2.5 text-[10px] font-medium tracking-[0.08em] text-stone-300 hover:bg-white/6 hover:text-stone-50"
+            className="flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-[1.15rem] px-2 py-2.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-stone-300 hover:bg-white/6 hover:text-stone-50"
           >
             <span
               className={

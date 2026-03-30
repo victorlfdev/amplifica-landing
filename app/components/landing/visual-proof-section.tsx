@@ -91,8 +91,8 @@ function PortfolioColumn({
             }
             className={[
               "group relative overflow-hidden rounded-[1.75rem] border border-white/10",
-              "bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]",
-              "shadow-[0_22px_80px_rgba(0,0,0,0.34)]",
+              "bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.018))]",
+              "shadow-[0_28px_90px_rgba(0,0,0,0.34)]",
               "before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.22),transparent_34%)]",
               "after:pointer-events-none after:absolute after:inset-[1px] after:rounded-[calc(1.75rem-1px)] after:border after:border-white/[0.04]",
               cardHeights[item.size],
@@ -107,7 +107,7 @@ function PortfolioColumn({
                 priority={order < 2}
                 className={[
                   "object-cover opacity-48 transition duration-700 ease-out",
-                  "group-hover:scale-[1.08] group-hover:opacity-100",
+                  "group-hover:scale-[1.05] group-hover:opacity-100",
                   imageAlignment[item.align ?? "center"],
                 ].join(" ")}
               />
@@ -126,7 +126,7 @@ function PortfolioColumn({
                   <span className="inline-flex rounded-full border border-white/12 bg-black/25 px-3 py-1 text-[10px] uppercase tracking-[0.26em] text-stone-200/80 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-50 sm:text-[11px]">
                     {item.label}
                   </span>
-                  <p className="max-w-[14rem] text-[11px] uppercase tracking-[0.26em] text-[var(--accent)]/90 transition-opacity duration-500 group-hover:opacity-65 sm:text-xs">
+                  <p className="max-w-[14rem] text-[11px] font-semibold uppercase tracking-[0.26em] text-[var(--accent)]/90 transition-opacity duration-500 group-hover:opacity-65 sm:text-xs">
                     {item.highlight}
                   </p>
                 </div>
@@ -139,10 +139,10 @@ function PortfolioColumn({
 
               <div className="space-y-4 transition-opacity duration-500 group-hover:opacity-50">
                 <div className="space-y-3">
-                  <h3 className="max-w-md font-[family-name:var(--font-display)] text-[2rem] leading-[0.92] tracking-tight text-stone-50 transition-opacity duration-500 group-hover:opacity-25 sm:text-[2.4rem]">
+                  <h3 className="max-w-md text-[2rem] font-bold leading-[0.9] tracking-[-0.055em] text-stone-50 transition-opacity duration-500 group-hover:opacity-25 sm:text-[2.55rem]">
                     {item.title}
                   </h3>
-                  <p className="max-w-md text-sm leading-6 text-stone-200/92 transition-opacity duration-500 group-hover:opacity-25 sm:text-[0.98rem] sm:leading-7">
+                  <p className="max-w-md text-sm leading-7 text-stone-200/92 transition-opacity duration-500 group-hover:opacity-25 sm:text-[0.98rem] sm:leading-7">
                     {item.description}
                   </p>
                 </div>
@@ -210,21 +210,19 @@ export function VisualProofSection() {
           transition={prefersReducedMotion ? undefined : { duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]"
         >
-          <article className="rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.02))] p-5 shadow-[0_18px_60px_rgba(0,0,0,0.24)] sm:rounded-[2rem] sm:p-6">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--accent)] sm:text-[11px]">
-              Prova visual estratégica
-            </p>
+          <article className="premium-card rounded-[1.7rem] p-5 sm:rounded-[2rem] sm:p-6">
+            <p className="section-kicker text-[10px] sm:text-[11px]">Prova visual estratégica</p>
             <div className="mt-4 grid gap-3 text-sm leading-6 text-stone-300 sm:grid-cols-3 sm:text-[0.96rem]">
               <p>Captações orientadas pela narrativa que o evento precisa sustentar.</p>
               <p>Registros que reforçam contexto, escala e percepção institucional da marca.</p>
               <p>Material pensado para continuar servindo no pós-evento, nas redes e na comunicação da organização.</p>
             </div>
           </article>
-          <article className="rounded-[1.7rem] border border-[var(--accent)]/20 bg-[linear-gradient(180deg,rgba(213,185,138,0.12),rgba(255,255,255,0.03))] p-5 shadow-[0_18px_60px_rgba(0,0,0,0.24)] sm:rounded-[2rem] sm:p-6">
-            <p className="text-[10px] uppercase tracking-[0.28em] text-stone-200/75 sm:text-[11px]">
+          <article className="premium-card-strong rounded-[1.7rem] p-5 sm:rounded-[2rem] sm:p-6">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-stone-200/75 sm:text-[11px]">
               Valor percebido
             </p>
-            <p className="mt-4 font-[family-name:var(--font-display)] text-[2.15rem] leading-[0.92] text-stone-50 sm:text-[2.5rem]">
+            <p className="mt-4 text-[2.15rem] font-bold leading-[0.9] tracking-[-0.055em] text-stone-50 sm:text-[2.7rem]">
               O evento deixa de ser apenas registro e passa a operar como ativo de comunicação.
             </p>
           </article>

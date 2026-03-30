@@ -61,7 +61,7 @@ export const heroHighlights: HighlightItem[] = [
   {
     title: "Estratégia antes da captação",
     description:
-      "Cada evento começa com uma leitura clara de narrativa, prioridades e objetivos de comunicação.",
+      "Cada evento começa com uma leitura clara da narrativa, das prioridades e dos objetivos de comunicação.",
   },
   {
     title: "Cobertura com visão de marca",
@@ -90,7 +90,7 @@ export const visualProofItems: VisualProofItem[] = [
     label: "Presença institucional",
     title: "Ambientes que comunicam solidez",
     description: "Arquitetura, recepção e marca compondo uma presença institucional sólida.",
-    highlight: "Percepção premium no detalhe",
+    highlight: "Percepção premium nos detalhes",
     imageSrc: "/images/PresencaInstitucional.webp",
     imageAlt: "Ambiente institucional de evento registrado pela Amplifica.",
     size: "medium",
@@ -175,7 +175,7 @@ export const differentialItems: HighlightItem[] = [
   {
     title: "Narrativa antes da operação",
     description:
-      "A Amplifica começa pela pergunta certa: o que este evento precisa comunicar para fortalecer a marca ou instituição?",
+      "A Amplifica começa pela pergunta certa: o que este evento precisa comunicar para fortalecer a marca ou a instituição?",
   },
   {
     title: "Captação com critério",

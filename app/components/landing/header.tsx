@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { contactLinks, navigationItems } from "./content";
 
 function InstagramIcon() {
@@ -34,10 +35,17 @@ function WhatsAppIcon() {
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-30 border-b border-white/8 bg-black/45 px-5 py-4 backdrop-blur-xl sm:px-8 sm:py-5 lg:px-16">
+    <header className="sticky top-0 z-30 border-b border-white/8 bg-[rgba(10,10,10,0.62)] px-5 py-4 backdrop-blur-2xl sm:px-8 sm:py-5 lg:px-16">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 sm:gap-6">
         <a href="#top" className="min-w-0 flex-1 space-y-1 md:flex-none">
-          <img src="/images/AmplificaTipografiaBranco.webp" alt="Logo da Amplifica" className="h-6 w-auto object-contain sm:h-8" />
+          <Image
+            src="/images/AmplificaTipografiaBranco.webp"
+            alt="Logo da Amplifica"
+            width={180}
+            height={28}
+            priority
+            className="h-6 w-auto object-contain opacity-95 sm:h-7"
+          />
         </a>
 
         <nav aria-label="Navegação principal" className="hidden items-center gap-6 lg:flex">
@@ -45,7 +53,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="relative text-sm text-stone-300 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-[var(--accent)] after:transition-[width] after:duration-200 hover:text-stone-100 hover:after:w-full"
+              className="relative text-[0.8rem] font-medium uppercase tracking-[0.18em] text-stone-300/88 after:absolute after:-bottom-1.5 after:left-1/2 after:h-px after:w-0 after:-translate-x-1/2 after:bg-[var(--accent)] after:transition-[width] after:duration-300 hover:text-stone-100 hover:after:w-full"
             >
               {item.label}
             </a>
@@ -58,7 +66,7 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="Abrir Instagram da Amplifica"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/4 text-stone-300 transition-colors duration-200 hover:border-white/20 hover:bg-white/8 hover:text-stone-100"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-stone-300 transition-colors duration-300 hover:border-white/20 hover:bg-white/8 hover:text-stone-100"
           >
             <InstagramIcon />
           </a>
@@ -67,7 +75,7 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="Falar com a Amplifica no WhatsApp"
-            className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-3 text-[0.78rem] font-semibold text-stone-950 shadow-[0_10px_30px_rgba(213,185,138,0.18)] transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 sm:px-4"
+            className="button-primary inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-full px-3 text-[0.72rem] font-bold uppercase tracking-[0.16em] transition-all duration-300 sm:px-4"
           >
             <WhatsAppIcon />
             <span className="hidden sm:inline">Solicitar proposta</span>
