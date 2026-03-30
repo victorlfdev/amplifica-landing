@@ -149,7 +149,7 @@ export default function ScrollVideoHero() {
           loop={isMobile}
           autoPlay={isMobile}
         >
-          <source src="/output-scroll-snappy.mp4" type="video/mp4" />
+          <source src="/hero-output-v4.mp4" type="video/mp4" />
         </video>
 
         <motion.div
