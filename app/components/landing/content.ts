@@ -37,8 +37,8 @@ export type ContactLink = {
 
 export const navigationItems: NavItem[] = [
   { label: "Quem somos", href: "#quem-somos" },
+  { label: "Portfólio", href: "#portfolio" },
   { label: "Soluções", href: "#solucoes" },
-  { label: "Diferencial", href: "#diferencial" },
   { label: "Contato", href: "#contato" },
 ];
 
@@ -59,37 +59,37 @@ export const contactLinks = {
 
 export const heroHighlights: HighlightItem[] = [
   {
-    title: "Estratégia antes da captação",
+    title: "Sinal Blindado",
     description:
-      "Cada evento começa com uma leitura clara da narrativa, das prioridades e dos objetivos de comunicação.",
+      "Pré-produção obsessiva, equipe profissional e processos testados que eliminam riscos.",
   },
   {
-    title: "Cobertura com visão de marca",
+    title: "Sinal Conectado",
     description:
-      "A execução audiovisual é orientada para reforçar autoridade, contexto e percepção de valor.",
+      "Divulgação estratégica, stories em tempo real e transmissão ao vivo.",
   },
   {
-    title: "Conteúdo que continua depois",
+    title: "Sinal Contínuo",
     description:
-      "O material captado se transforma em ativos de conteúdo, posicionamento e presença institucional.",
+      "Conteúdo para 30+ dias pós-evento. Seu impacto e relevância nunca param.",
   },
 ];
 
 export const visualProofItems: VisualProofItem[] = [
   {
-    label: "Evento principal",
-    title: "Cobertura pensada para presença e escala",
-    description: "Palco, público e atmosfera registrados com direção e intenção.",
+    label: "Evento ao vivo",
+    title: "Cobertura com direção e intenção",
+    description: "Palco e público captados com propósito narrativo.",
     highlight: "Narrativa visual do evento",
-    imageSrc: "/images/Galeria01.webp",
-    imageAlt: "Cobertura audiovisual de evento com palco iluminado e público presente.",
+    imageSrc: "/images/EventBTS01.jpg",
+    imageAlt: "Cobertura audiovisual de evento com cameraman e iluminação profissional.",
     size: "feature",
     align: "center",
   },
   {
     label: "Presença institucional",
     title: "Ambientes que comunicam solidez",
-    description: "Arquitetura, recepção e marca compondo uma presença institucional sólida.",
+    description: "Marca e ambiente compondo presença institucional.",
     highlight: "Percepção premium nos detalhes",
     imageSrc: "/images/PresencaInstitucional.webp",
     imageAlt: "Ambiente institucional de evento registrado pela Amplifica.",
@@ -99,40 +99,40 @@ export const visualProofItems: VisualProofItem[] = [
   {
     label: "Operação técnica",
     title: "Bastidores conduzidos com precisão",
-    description: "Equipe e operação atuando com discrição, ritmo e controle.",
-    highlight: "Execução com padrão profissional",
-    imageSrc: "/images/Galeria03.webp",
-    imageAlt: "Equipe em ação durante operação audiovisual de evento.",
+    description: "Operação com discrição e controle.",
+    highlight: "Padrão profissional",
+    imageSrc: "/images/EventBTS02.jpg",
+    imageAlt: "Bastidores de operação audiovisual com equipe e iluminação.",
     size: "compact",
     align: "center",
   },
   {
     label: "Pós-evento",
-    title: "Conteúdo que continua depois do palco",
-    description: "Imagens preparadas para seguir gerando valor além do evento.",
-    highlight: "Ativo de marca de longo prazo",
+    title: "Conteúdo além do palco",
+    description: "Imagens que geram valor muito depois do evento.",
+    highlight: "Ativo de longo prazo",
     imageSrc: "/images/PosEvento.webp",
     imageAlt: "Conteúdo visual de marca captado durante evento.",
     size: "feature",
     align: "center",
   },
   {
-    label: "Ritmo de produção",
-    title: "Movimento, coordenação e resposta rápida",
-    description: "Bastidores que revelam domínio operacional sem ruído.",
+    label: "Time em campo",
+    title: "Equipe e resposta em tempo real",
+    description: "Bastidores com domínio operacional.",
     highlight: "Cobertura viva e controlada",
-    imageSrc: "/images/Galeria04.webp",
-    imageAlt: "Bastidores de operação audiovisual mostrando equipe e equipamentos.",
+    imageSrc: "/images/TeamAmplifica.jpg",
+    imageAlt: "Time da Amplifica pronto para produção.",
     size: "medium",
-    align: "bottom",
+    align: "top",
   },
   {
     label: "Projeto em destaque",
-    title: "Cada projeto vira repertório visual da marca",
-    description: "Projetos transformados em memória, autoridade e recorrência visual.",
-    highlight: "Resultados além do dia do evento",
+    title: "Cada projeto vira repertório de marca",
+    description: "Projetos que viram memória e autoridade.",
+    highlight: "Resultados além do evento",
     imageSrc: "/images/ProjetoDestaque.webp",
-    imageAlt: "Projeto em destaque com ambiente institucional e iluminação cênica.",
+    imageAlt: "Projeto em destaque com ambiente institucional.",
     size: "compact",
     align: "top",
   },
@@ -140,69 +140,63 @@ export const visualProofItems: VisualProofItem[] = [
 
 export const solutionItems: SolutionItem[] = [
   {
-    title: "Estratégia de Conteúdo para Eventos",
-    description:
-      "Planejamento editorial e de captação para transformar o evento em uma fonte organizada de conteúdo, posicionamento e continuidade de marca.",
+    title: "Sinal Blindado",
+    description: "Do ruído operacional ao sinal de alta qualidade.",
     items: [
-      "Definição da narrativa que o evento precisa sustentar.",
-      "Planejamento do que deve ser captado com intenção.",
-      "Estruturação de entregas para antes, durante e depois do evento.",
+      "Pré-produção obsessiva (garantimos que vai dar certo)",
+      "Equipe profissional + equipamentos de ponta",
+      "Processos testados que eliminam riscos",
+      "Atenção obsessiva a prazos e entregas",
     ],
   },
   {
-    title: "Cobertura Audiovisual de Eventos",
-    description:
-      "Execução audiovisual com padrão profissional e critério estratégico, para que o registro tenha qualidade técnica e relevância institucional.",
+    title: "Sinal Conectado",
+    description: "Da invisibilidade ao sinal que o mundo ouve.",
     items: [
-      "Captação de vídeo, fotografia e momentos-chave.",
-      "Registro de bastidores, palco, público e detalhes de marca.",
-      "Operação orientada por clareza de mensagem e valor percebido.",
+      "Divulgação estratégica (Ads)",
+      "Stories em tempo real",
+      "Transmissão ao vivo",
+      "Em desenvolvimento — em breve disponível",
     ],
   },
   {
-    title: "Gestão Estratégica de Redes Sociais",
-    description:
-      "Curadoria e desdobramento do material captado em conteúdos que ampliam alcance, reforçam autoridade e prolongam o impacto do evento.",
+    title: "Sinal Contínuo",
+    description: "Do esquecimento ao impacto que nunca para.",
     items: [
-      "Seleção de cortes e formatos para canais digitais.",
-      "Organização de calendário e ritmo de publicação.",
-      "Aproveitamento do evento como ativo de comunicação contínua.",
+      "Fotos profissionais (LinkedIn, Instagram, site)",
+      "Vídeos dos highlights para redes sociais",
+      "Conteúdo para 30+ dias pós-evento",
+      "Seu evento continua gerando impacto e relevância",
     ],
   },
 ];
 
 export const differentialItems: HighlightItem[] = [
   {
-    title: "Narrativa antes da operação",
-    description:
-      "A Amplifica começa pela pergunta certa: o que este evento precisa comunicar para fortalecer a marca ou a instituição?",
+    title: "Mais que fornecedores",
+    description: "Somos parceiros do seu evento. Sua missão é a nossa missão.",
   },
   {
-    title: "Captação com critério",
-    description:
-      "Nada é registrado por excesso. A cobertura prioriza o que realmente sustenta posicionamento, memória e autoridade.",
+    title: "Eliminamos o ruído",
+    description: "Operacional, de visibilidade ou de esquecimento — resolvemos os três.",
   },
   {
-    title: "Valor no pós-evento",
-    description:
-      "O material não termina na entrega. Ele passa a servir como conteúdo, repertório institucional e presença de longo prazo.",
+    title: "Amplificamos o sinal",
+    description: "Blindado, conectado e contínuo: seu evento trabalha por você muito além do dia.",
   },
 ];
 
 export const audienceItems: AudienceItem[] = [
   {
-    title: "Instituições culturais e projetos educacionais",
-    description:
-      "Para organizações que precisam comunicar impacto, relevância pública e consistência institucional.",
+    title: "Instituições culturais e educacionais",
+    description: "Para quem comunica impacto e consistência institucional.",
   },
   {
     title: "Igrejas, artistas e marcas autorais",
-    description:
-      "Para estruturas que desejam transformar presença ao vivo em conteúdo, memória e autoridade contínua.",
+    description: "Para quem transforma presença ao vivo em autoridade contínua.",
   },
   {
     title: "Empresas B2B e marcas institucionais",
-    description:
-      "Para times que usam eventos como ferramenta de reputação, relacionamento e posicionamento estratégico.",
+    description: "Para times que usam eventos como ferramenta de reputação.",
   },
 ];

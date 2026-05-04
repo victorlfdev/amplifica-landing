@@ -157,40 +157,35 @@ export default function ScrollVideoHero() {
           style={{ opacity: overlayOpacity }}
         />
 
-        <div className="relative z-10 flex h-full mt-20 justify-center px-5 sm:px-6 md:px-8">
+        <div className="relative z-10 flex h-full mt-14 sm:mt-20 justify-center px-5 sm:px-6 md:px-8">
           <motion.div
             className="w-full max-w-5xl text-center"
             style={{ opacity: textOpacity, y: textY }}
           >
-            <span className="inline-flex max-w-full items-center justify-center rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/8 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[var(--accent)] sm:px-4 sm:text-[10px] sm:tracking-[0.24em]">
-              Amplifica | Narrativa, presença e impacto para eventos
+            <span className="inline-flex max-w-full items-center justify-center rounded-full border border-[var(--accent)]/20 bg-[var(--accent)]/8 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.24em] text-[var(--accent)] sm:px-4 sm:text-[10px] sm:tracking-[0.3em]">
+              Amplifica — Audiovisual estratégico
             </span>
-            <h1 className="mb-6 mt-6 font-headline text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:mt-8 sm:text-5xl md:mb-8 md:text-7xl lg:text-8xl xl:text-9xl">
-              Criando narrativas{" "}
+            <h1 className="mb-6 mt-4 font-headline text-[2.4rem] font-extrabold leading-[0.92] tracking-[-0.04em] text-white sm:mt-8 sm:text-5xl md:mb-8 md:text-6xl lg:text-[6rem] xl:text-[7.5rem]">
+              Transformando{" "}
               <span
-                className="text-[#D5B98A]/90 italic font-[200] text-shadow-[0_0_10px_rgba(213,185,138,0.1)]"
+                className="text-[var(--accent)] italic"
                 style={{ fontWeight: 200, fontVariationSettings: '"wght" 200' }}
               >
-                Audiovisuais.
+                ruído em sinal.
               </span>
             </h1>
-            <p className="mx-auto max-w-xl font-body text-base leading-relaxed text-[#EEEEEE] sm:max-w-2xl sm:text-lg md:text-xl">
-              Transformamos acontecimentos ao vivo em conteúdo, autoridade e
-              percepção de marca com direção estratégica antes, durante e
-              depois do evento.
-            </p>
-            <div className="mt-8 flex flex-col justify-center gap-4 sm:mt-10 sm:gap-5 md:mt-12 md:flex-row md:gap-6">
+            <div className="mt-6 flex flex-col justify-center gap-3 sm:mt-12 sm:gap-5 md:mt-14 md:flex-row md:gap-6">
               <a
                 href="#portfolio"
-                className="inline-flex w-full items-center justify-center rounded-full bg-[#D5B98A] px-7 py-4 text-center font-headline text-xs font-bold uppercase tracking-[0.22em] text-black shadow-[0_14px_40px_rgba(213,185,138,0.18)] transition-all duration-500 ease-out hover:-translate-y-1 hover:scale-[1.025] hover:brightness-105 hover:shadow-[0_22px_55px_rgba(213,185,138,0.28)] sm:w-auto sm:px-10 sm:py-5 sm:text-sm sm:tracking-widest"
+                className="button-primary inline-flex w-full items-center justify-center rounded-full px-7 py-4 text-center text-xs sm:w-auto sm:px-10 sm:py-5 sm:text-sm"
               >
-                Ver Showcase
+                Ver portfólio
               </a>
               <a
                 href="#solucoes"
-                className="inline-flex w-full items-center justify-center rounded-full border border-[#A0A0A0]/70 bg-white/[0.02] px-7 py-4 text-center font-headline text-xs font-bold uppercase tracking-[0.22em] text-white shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#D5B98A]/65 hover:bg-white/6 hover:text-[#F4E7CE] hover:shadow-[0_18px_42px_rgba(213,185,138,0.12)] sm:w-auto sm:px-10 sm:py-5 sm:text-sm sm:tracking-widest"
+                className="button-gold-outline inline-flex w-full items-center justify-center rounded-full px-7 py-4 text-center text-xs sm:w-auto sm:px-10 sm:py-5 sm:text-sm"
               >
-                Nossas Soluções
+                Soluções
               </a>
             </div>
           </motion.div>

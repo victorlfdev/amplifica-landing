@@ -20,9 +20,9 @@ const editorialColumns = [
 ] satisfies VisualProofItem[][];
 
 const cardHeights: Record<VisualProofItem["size"], string> = {
-  compact: "min-h-[17rem] sm:min-h-[18rem]",
-  medium: "min-h-[22rem] sm:min-h-[25rem]",
-  feature: "min-h-[28rem] sm:min-h-[34rem]",
+  compact: "min-h-[16rem] sm:min-h-[22rem]",
+  medium: "min-h-[20rem] sm:min-h-[30rem]",
+  feature: "min-h-[26rem] sm:min-h-[42rem]",
 };
 
 const imageAlignment: Record<NonNullable<VisualProofItem["align"]>, string> = {
@@ -53,7 +53,7 @@ function PortfolioColumn({
   return (
     <motion.div
       style={prefersReducedMotion || !enableParallax ? undefined : { y: translateY }}
-      className="flex flex-col gap-5 sm:gap-5"
+      className="flex flex-col gap-4 sm:gap-5"
     >
       {items.map((item, itemIndex) => {
         const order = startIndex + itemIndex;
@@ -93,7 +93,7 @@ function PortfolioColumn({
               "group relative overflow-hidden rounded-[1.75rem] border border-white/10",
               "bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.018))]",
               "shadow-[0_28px_90px_rgba(0,0,0,0.34)]",
-              "before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.22),transparent_34%)]",
+              "before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_top_left,rgba(221,185,74,0.22),transparent_34%)]",
               "after:pointer-events-none after:absolute after:inset-[1px] after:rounded-[calc(1.75rem-1px)] after:border after:border-white/[0.04]",
               cardHeights[item.size],
             ].join(" ")}
@@ -106,22 +106,22 @@ function PortfolioColumn({
                 sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
                 priority={order < 2}
                 className={[
-                  "object-cover opacity-48 transition duration-700 ease-out",
-                  "group-hover:scale-[1.05] group-hover:opacity-100",
+                  "object-cover opacity-[0.62] transition duration-700 ease-out",
+                  "group-hover:scale-[1.06] group-hover:opacity-100",
                   imageAlignment[item.align ?? "center"],
                 ].join(" ")}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,4,4,0.08),rgba(4,4,4,0.28)_34%,rgba(4,4,4,0.84)_100%)]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,4,4,0.04),rgba(4,4,4,0.18)_40%,rgba(4,4,4,0.78)_100%)]" />
               <motion.div
                 aria-hidden="true"
-                className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),transparent_26%,transparent_70%,rgba(213,185,138,0.14))] opacity-50"
-                animate={prefersReducedMotion ? undefined : { opacity: [0.35, 0.52, 0.4] }}
+                className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.07),transparent_26%,transparent_70%,rgba(221,185,74,0.18))] opacity-50"
+                animate={prefersReducedMotion ? undefined : { opacity: [0.3, 0.55, 0.35] }}
                 transition={prefersReducedMotion ? undefined : { duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               />
             </div>
 
             <div className="relative flex h-full flex-col justify-between p-5 sm:p-6">
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start justify-between gap-2 sm:gap-4">
                 <div className="space-y-3 transition-opacity duration-500 group-hover:opacity-50">
                   <span className="inline-flex rounded-full border border-white/12 bg-black/25 px-3 py-1 text-[10px] uppercase tracking-[0.26em] text-stone-200/80 backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-50 sm:text-[11px]">
                     {item.label}
@@ -132,14 +132,14 @@ function PortfolioColumn({
                 </div>
                 <motion.span
                   aria-hidden="true"
-                  className="mt-1 h-2.5 w-2.5 rounded-full bg-[var(--accent)] shadow-[0_0_18px_rgba(213,185,138,0.55)]"
+                  className="mt-1 h-2.5 w-2.5 rounded-full bg-[var(--accent)] shadow-[0_0_18px_rgba(232,165,0,0.6)]"
                   whileHover={prefersReducedMotion ? undefined : { scale: 1.12 }}
                 />
               </div>
 
               <div className="space-y-4 transition-opacity duration-500 group-hover:opacity-50">
                 <div className="space-y-3">
-                  <h3 className="max-w-md text-[2rem] font-bold leading-[0.9] tracking-[-0.055em] text-stone-50 transition-opacity duration-500 group-hover:opacity-25 sm:text-[2.55rem]">
+                  <h3 className="max-w-md text-[1.45rem] font-bold leading-[0.9] tracking-[-0.055em] text-stone-50 transition-opacity duration-500 group-hover:opacity-25 sm:text-[2rem] xl:text-[2.55rem]">
                     {item.title}
                   </h3>
                   <p className="max-w-md text-sm leading-7 text-stone-200/92 transition-opacity duration-500 group-hover:opacity-25 sm:text-[0.98rem] sm:leading-7">
@@ -176,56 +176,30 @@ export function VisualProofSection() {
   });
 
   const columnOne = useSpring(
-    useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : ["0%", "-8%"]),
-    { stiffness: 110, damping: 24, mass: 0.32 },
+    useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : ["0%", "-14%"]),
+    { stiffness: 80, damping: 20, mass: 0.4 },
   );
   const columnTwo = useSpring(
-    useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : ["0%", "9%"]),
-    { stiffness: 110, damping: 24, mass: 0.32 },
+    useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : ["0%", "12%"]),
+    { stiffness: 80, damping: 20, mass: 0.4 },
   );
   const columnThree = useSpring(
-    useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : ["0%", "-6%"]),
-    { stiffness: 110, damping: 24, mass: 0.32 },
+    useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : ["0%", "-10%"]),
+    { stiffness: 80, damping: 20, mass: 0.4 },
   );
 
   return (
     <SectionShell
       id="portfolio"
       eyebrow="Portfólio visual"
-      title="Imagens que mostram como um evento pode continuar gerando posicionamento depois que ele termina."
-      description="Esta seleção reúne palco, bastidores, operação e presença institucional para mostrar como a Amplifica transforma acontecimentos ao vivo em repertório de marca, conteúdo e autoridade."
+      title="Bastidores e presença — capturados com intenção."
     >
       <section
         ref={sectionRef}
         aria-label="Portfólio editorial da Amplifica"
         className="relative space-y-6 sm:space-y-8"
       >
-        <motion.div
-          initial={prefersReducedMotion ? undefined : { opacity: 0, y: 18 }}
-          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={prefersReducedMotion ? undefined : { duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-          className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]"
-        >
-          <article className="premium-card rounded-[1.7rem] p-5 sm:rounded-[2rem] sm:p-6">
-            <p className="section-kicker text-[10px] sm:text-[11px]">Prova visual estratégica</p>
-            <div className="mt-4 grid gap-3 text-sm leading-6 text-stone-300 sm:grid-cols-3 sm:text-[0.96rem]">
-              <p>Captações orientadas pela narrativa que o evento precisa sustentar.</p>
-              <p>Registros que reforçam contexto, escala e percepção institucional da marca.</p>
-              <p>Material pensado para continuar servindo no pós-evento, nas redes e na comunicação da organização.</p>
-            </div>
-          </article>
-          <article className="premium-card-strong rounded-[1.7rem] p-5 sm:rounded-[2rem] sm:p-6">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-stone-200/75 sm:text-[11px]">
-              Valor percebido
-            </p>
-            <p className="mt-4 text-[2.15rem] font-bold leading-[0.9] tracking-[-0.055em] text-stone-50 sm:text-[2.7rem]">
-              O evento deixa de ser apenas registro e passa a operar como ativo de comunicação.
-            </p>
-          </article>
-        </motion.div>
-
-        <div className="grid gap-4 xl:grid-cols-3 xl:items-start">
+        <div className="grid gap-4 sm:gap-5 xl:grid-cols-3 xl:items-start">
           <PortfolioColumn
             items={editorialColumns[0]}
             translateY={columnOne}

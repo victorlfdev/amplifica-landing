@@ -1,12 +1,12 @@
 export { AboutSection } from "./about-section";
-export { AudienceSection } from "./audience-section";
+export { MarqueeBanner } from "./marquee-banner";
 export { FinalCtaSection } from "./final-cta-section";
 export { Footer } from "./footer";
 export { Header } from "./header";
 export { HeroSection } from "./hero-section";
+export { IcpSection } from "./icp-section";
 export { MobileBottomNav } from "./mobile-bottom-nav";
 export { ProblemSection } from "./problem-section";
 export { default as ScrollVideoHero } from "./scroll-video-hero";
 export { SolutionsSection } from "./solutions-section";
-export { StrategicDifferentialSection } from "./strategic-differential-section";
 export { VisualProofSection } from "./visual-proof-section";
