@@ -10,17 +10,17 @@ export function StrategicDifferentialSection() {
       title="O diferencial da Amplifica está na inteligência que antecede a captação."
       description="Não registramos apenas o que acontece. Definimos o que precisa ser preservado, ampliado e reutilizado para fortalecer a marca depois do evento."
     >
-      <div className="grid gap-5 sm:gap-6 md:grid-cols-3">
+      <div className="grid gap-4 sm:gap-5 lg:grid-cols-3">
         {differentialItems.map((item, index) => (
           <Reveal key={item.title} delay={index * 0.08}>
             <article className="premium-card h-full rounded-[1.7rem] p-6 sm:rounded-[2rem] sm:p-8">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-xs sm:tracking-[0.28em]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--accent)]/60 sm:text-[11px]">
                 Pilar 0{index + 1}
               </p>
-              <h3 className="mt-4 text-xl font-bold tracking-[-0.04em] text-stone-100 sm:text-2xl">
+              <h3 className="mt-3 text-lg font-bold tracking-[-0.04em] text-stone-100 sm:text-xl">
                 {item.title}
               </h3>
-              <p className="mt-4 text-base leading-7 text-stone-300 sm:leading-8">
+              <p className="mt-3 text-[0.87rem] leading-[1.75] text-stone-400 sm:text-base sm:leading-[1.8]">
                 {item.description}
               </p>
             </article>

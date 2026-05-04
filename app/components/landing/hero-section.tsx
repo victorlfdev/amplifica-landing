@@ -1,215 +1,144 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
+import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { heroHighlights } from "./content";
+import { contactLinks } from "./content";
 
-const spotlightMotion = {
-  initial: { opacity: 0, y: 28 },
+const ease = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp = {
+  initial: { opacity: 0, y: 36 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.85, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.9, ease },
 };
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement | null>(null);
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
-  const contentY = useTransform(scrollYProgress, [0, 1], [18, -20]);
-  const panelY = useTransform(scrollYProgress, [0, 1], [24, 18]);
-  const glowOpacity = useTransform(scrollYProgress, [0, 0.4, 1], [0.45, 1, 0.4]);
+
+  const contentY  = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [0, 0] : [24, -32]);
+  const imgScale  = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [1, 1] : [1.08, 0.96]);
+  const imgY      = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? [0, 0] : [-24, 24]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative border-b border-white/8 px-5 pb-20 pt-14 sm:px-8 sm:pb-24 sm:pt-16 lg:px-16 lg:pb-32 lg:pt-20"
+      id="top"
+      className="relative border-b border-white/[0.04] px-5 pb-12 pt-8 sm:px-8 sm:pb-16 sm:pt-10 lg:px-16 lg:pb-20 lg:pt-12"
     >
-      <div
-        id="top"
-        className="mx-auto grid w-full max-w-6xl gap-12 sm:gap-14 lg:grid-cols-[minmax(0,1.04fr)_minmax(360px,0.96fr)] lg:items-center lg:gap-16"
-      >
+      <div className="mx-auto grid w-full max-w-6xl gap-8 sm:gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch lg:gap-12">
+
+        {/* ── Esquerda: headline + logo + CTAs ── */}
         <motion.div
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={{
-            animate: {
-              transition: {
-                staggerChildren: 0.12,
-              },
-            },
-          }}
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{ animate: { transition: { staggerChildren: 0.13 } } }}
           style={prefersReducedMotion ? undefined : { y: contentY }}
-          className="space-y-10 sm:space-y-12"
+          className="flex flex-col justify-center space-y-8 sm:space-y-10"
         >
-          <motion.header variants={spotlightMotion} className="max-w-4xl space-y-6 sm:space-y-7">
-            <div className="flex items-center gap-3 sm:gap-4">
+          {/* Logo */}
+          <motion.div variants={fadeUp} className="flex items-center gap-3.5 sm:gap-4">
+            <motion.div
+              initial={prefersReducedMotion ? undefined : { opacity: 0, scale: 0.5, rotate: -10 }}
+              whileInView={prefersReducedMotion ? undefined : { opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={prefersReducedMotion ? undefined : { duration: 0.85, ease }}
+            >
               <Image
                 src="/images/AmplificaIconeBranco.webp"
                 alt="Ícone da Amplifica"
-                width={56}
-                height={56}
+                width={72}
+                height={72}
                 priority
-                className="h-12 w-12 object-contain opacity-95 sm:h-14 sm:w-14"
+                className="h-14 w-14 object-contain drop-shadow-[0_0_20px_rgba(232,165,0,0.5)] sm:h-[4.5rem] sm:w-[4.5rem]"
               />
-              <Image
-                src="/images/TipografiaAbranco.png"
-                alt="Tipografia da Amplifica"
-                width={120}
-                height={32}
-                priority
-                className="mt-2.5 h-8 w-auto object-contain opacity-95 sm:h-11"
-              />
-            </div>
-            <p className="section-kicker">Audiovisual estratégico para eventos</p>
-            <h2 className="max-w-[11ch] text-[3.35rem] font-extrabold leading-[0.88] tracking-[-0.07em] text-stone-100 sm:text-[4.7rem] lg:text-[6.5rem]">
-              Eventos que não terminam no palco.
+            </motion.div>
+            <Image
+              src="/images/TipografiaAbranco.png"
+              alt="Amplifica"
+              width={180}
+              height={48}
+              priority
+              className="mt-2 h-9 w-auto object-contain opacity-95 sm:h-12"
+            />
+          </motion.div>
+
+          {/* Headline */}
+          <motion.header variants={fadeUp} className="space-y-5 sm:space-y-6">
+            <h2 className="text-[2.2rem] font-extrabold leading-[0.88] tracking-[-0.06em] text-white sm:text-[3.2rem] md:text-[4rem] lg:text-[5rem] xl:text-[6rem]">
+              Transformando{" "}
+              <span className="block text-[1.8rem] leading-[0.95] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.8rem] xl:text-[4.6rem]">
+                Ruído em Sinal.
+              </span>
             </h2>
-            <p className="max-w-2xl text-[1.03rem] leading-8 text-stone-300 sm:text-[1.12rem] sm:leading-9 lg:text-[1.24rem]">
-              A Amplifica transforma experiências ao vivo em conteúdo,
-              posicionamento e impacto duradouro para marcas, instituições e
-              organizações que precisam comunicar com mais autoridade.
+            <p className="max-w-[28ch] text-[0.87rem] leading-[1.8] text-stone-500">
+              Três ruídos que resolvemos. Três sinais que entregamos.
             </p>
           </motion.header>
 
-
-
-          <motion.dl
-            variants={spotlightMotion}
-            className="grid gap-4 border-t border-white/8 pt-6 text-sm text-stone-400 sm:grid-cols-3 sm:pt-7"
-          >
-            <div className="space-y-2">
-              <dt className="text-[10px] font-semibold uppercase tracking-[0.26em] text-stone-500">
-                Para quem
-              </dt>
-              <dd className="text-sm leading-7 text-stone-200 sm:text-base sm:leading-8">
-                Marcas e instituições que constroem autoridade por meio de eventos.
-              </dd>
-            </div>
-            <div className="space-y-2">
-              <dt className="text-[10px] font-semibold uppercase tracking-[0.26em] text-stone-500">
-                O que entregamos
-              </dt>
-              <dd className="text-sm leading-7 text-stone-200 sm:text-base sm:leading-8">
-                Direção, cobertura e desdobramento estratégico do material captado.
-              </dd>
-            </div>
-            <div className="space-y-2">
-              <dt className="text-[10px] font-semibold uppercase tracking-[0.26em] text-stone-500">
-                Resultado
-              </dt>
-              <dd className="text-sm leading-7 text-stone-200 sm:text-base sm:leading-8">
-                Mais presença, mais clareza institucional e mais valor percebido.
-              </dd>
-            </div>
-          </motion.dl>
+          {/* CTAs */}
+          <motion.div variants={fadeUp} className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <a
+              href={contactLinks.whatsapp.href}
+              target="_blank"
+              rel="noreferrer"
+              className="button-primary inline-flex items-center justify-center rounded-full px-8 py-4 text-[0.74rem] font-bold uppercase tracking-[0.22em]"
+            >
+              Solicitar proposta
+            </a>
+            <a
+              href="#portfolio"
+              className="button-secondary inline-flex items-center justify-center rounded-full px-8 py-4 text-[0.74rem] font-bold uppercase tracking-[0.22em]"
+            >
+              Ver portfólio
+            </a>
+          </motion.div>
         </motion.div>
 
+        {/* ── Direita: imagem full com quote sobreposto ── */}
         <motion.div
-          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, x: 36 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={
-            prefersReducedMotion
-              ? { duration: 0 }
-              : { duration: 0.95, delay: 0.15, ease: [0.22, 1, 0.36, 1] }
-          }
-          style={prefersReducedMotion ? undefined : { y: panelY }}
-          className="relative md:mx-auto md:w-full md:max-w-3xl lg:max-w-none"
+          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, x: 40, scale: 0.96 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={prefersReducedMotion ? { duration: 0 } : { duration: 1.05, delay: 0.2, ease }}
+          className="relative min-h-[22rem] overflow-hidden rounded-[2rem] sm:min-h-[34rem] lg:min-h-[52rem]"
         >
+          {/* Imagem com parallax */}
           <motion.div
-            style={prefersReducedMotion ? undefined : { opacity: glowOpacity }}
-            className="absolute -right-4 bottom-4 h-20 w-20 rounded-full bg-white/8 blur-3xl sm:-right-6 sm:bottom-6 sm:h-24 sm:w-24"
-          />
-          <motion.div
-            style={prefersReducedMotion ? undefined : { opacity: glowOpacity }}
-            className="absolute -left-8 top-8 hidden h-28 w-28 rounded-full bg-[var(--accent-soft)] blur-3xl lg:block xl:h-36 xl:w-36"
-          />
+            style={prefersReducedMotion ? undefined : { scale: imgScale, y: imgY }}
+            className="absolute inset-[-8%]"
+          >
+            <Image
+              src="/images/Galeria01.webp"
+              alt="Diretor da Amplifica"
+              fill
+              sizes="(max-width: 1023px) 100vw, 45vw"
+              className="object-cover object-top"
+              priority
+            />
+          </motion.div>
 
-          <div className="premium-card relative overflow-hidden rounded-[2rem] p-3 sm:rounded-[2.4rem] sm:p-4 md:p-5 lg:p-5">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(213,185,138,0.22),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.07),transparent_28%)]" />
-            <div className="relative grid gap-3 sm:gap-4 md:gap-5">
-              <div className="overflow-hidden rounded-[1.7rem] border border-white/10 bg-[linear-gradient(180deg,#111214,#090909)] p-5 sm:rounded-[2rem] sm:p-6 md:p-7 lg:p-7">
-                <div className="flex items-center justify-between gap-4">
-                  <p className="section-kicker text-[10px] sm:text-[11px]">Antes, durante e depois</p>
-                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[10px] uppercase tracking-[0.2em] text-stone-300 sm:px-3 sm:text-[11px] sm:tracking-[0.24em]">
-                    Amplifica
-                  </span>
-                </div>
+          {/* Overlay: escurece de baixo para cima */}
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.15)_0%,rgba(0,0,0,0.1)_40%,rgba(0,0,0,0.85)_100%)]" />
 
-                <div className="mt-6 space-y-5 sm:mt-8 sm:space-y-6 md:mt-7 md:space-y-7">
-                  <div className="space-y-3 md:space-y-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500 sm:text-sm sm:tracking-[0.28em]">
-                      Visão estratégica
-                    </p>
-                    <p className="max-w-[13ch] text-[2.55rem] font-bold leading-[0.9] tracking-[-0.055em] text-stone-100 sm:text-[3.25rem] md:max-w-[15ch] md:text-[3rem] lg:text-[3.35rem]">
-                      Cada evento pode render muito mais do que registro.
-                    </p>
-                  </div>
+          {/* Faixa dourada decorativa no topo */}
+          <div className="absolute left-0 right-0 top-0 h-1 bg-[linear-gradient(90deg,transparent,rgba(232,165,0,0.8),transparent)]" />
 
-                  <div
-                    className="grid gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-1 lg:gap-5"
-                    aria-label="Destaques da visão estratégica"
-                  >
-                    <div className="rounded-[1.3rem] border border-white/8 bg-white/[0.04] p-4 transition-colors duration-300 hover:border-white/12 hover:bg-white/[0.06] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[188px] md:flex-col md:justify-between md:p-5 lg:min-h-[172px]">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-500 sm:text-xs sm:tracking-[0.26em]">
-                        Planejamento
-                      </p>
-                      <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7 md:mt-5 md:max-w-[24ch] md:text-[0.96rem] md:leading-6 lg:max-w-none lg:text-base lg:leading-7">
-                        Definimos o que precisa ser captado para sustentar narrativa e valor de marca.
-                      </p>
-                    </div>
-                    <div className="rounded-[1.3rem] border border-[var(--accent)]/16 bg-[linear-gradient(180deg,rgba(213,185,138,0.14),rgba(255,255,255,0.03))] p-4 transition-colors duration-300 hover:border-[var(--accent)]/28 hover:bg-[linear-gradient(180deg,rgba(213,185,138,0.18),rgba(255,255,255,0.04))] sm:rounded-[1.5rem] sm:p-5 md:flex md:min-h-[188px] md:flex-col md:justify-between md:p-5 lg:min-h-[172px]">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--accent)] sm:text-xs sm:tracking-[0.26em]">
-                        Pós-evento
-                      </p>
-                      <p className="mt-3 text-sm leading-6 text-stone-200 sm:text-base sm:leading-7 md:mt-5 md:max-w-[23ch] md:text-[0.94rem] md:leading-6 lg:max-w-none lg:text-base lg:leading-7">
-                        Transformamos o material em conteúdo que continua comunicando autoridade.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="grid gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-1 md:gap-3 lg:grid-cols-1 lg:gap-4"
-                aria-label="Destaques da proposta"
-              >
-                {heroHighlights.map((item, index) => (
-                  <motion.article
-                    key={item.title}
-                    initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 22 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.35 }}
-                    transition={
-                      prefersReducedMotion
-                        ? { duration: 0 }
-                        : {
-                            duration: 0.5,
-                            delay: 0.1 + index * 0.08,
-                            ease: [0.22, 1, 0.36, 1],
-                          }
-                    }
-                    className="rounded-[1.4rem] border border-white/8 bg-black/25 p-4 backdrop-blur-sm transition-colors duration-300 hover:border-white/12 hover:bg-black/30 sm:rounded-[1.6rem] sm:p-5 md:flex md:min-h-[212px] md:flex-col md:justify-between md:px-4 md:py-5 lg:min-h-[184px] lg:p-5"
-                  >
-                    <div className="space-y-3 md:space-y-3.5">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-stone-500 sm:text-[11px] sm:tracking-[0.3em]">
-                        0{index + 1}
-                      </p>
-                      <h2 className="text-base font-bold leading-5 tracking-[-0.03em] text-stone-100 sm:text-lg md:text-[0.98rem] md:leading-5 lg:text-[1.02rem] lg:leading-6">
-                        {item.title}
-                      </h2>
-                    </div>
-                    <p className="mt-3 text-sm leading-6 text-stone-300 sm:leading-7 md:mt-5 md:text-[0.89rem] md:leading-5 lg:text-[0.92rem] lg:leading-6">
-                      {item.description}
-                    </p>
-                  </motion.article>
-                ))}
-              </div>
-            </div>
+          {/* Conteúdo sobreposto */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:p-10">
+            <p className="mb-2 text-[9px] font-bold uppercase tracking-[0.38em] text-[var(--accent)]">
+              Sinal Blindado · Sinal Conectado · Sinal Contínuo
+            </p>
+            <p className="text-[1.5rem] font-extrabold leading-[1.0] tracking-[-0.05em] text-white sm:text-[1.9rem] lg:text-[2.3rem]">
+              Amplifica = Sinal Blindado + Sinal Conectado + Sinal Contínuo.
+            </p>
           </div>
         </motion.div>
       </div>

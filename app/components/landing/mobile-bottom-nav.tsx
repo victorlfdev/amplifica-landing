@@ -39,13 +39,19 @@ const navItems: MobileNavItem[] = [
     ),
   },
   {
-    label: "Diferencial",
-    href: "#diferencial",
-    ariaLabel: "Ir para a seção de diferencial estratégico",
+    label: "Portfólio",
+    href: "#portfolio",
+    ariaLabel: "Ir para o portfólio visual",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4.5 w-4.5 fill-none stroke-current">
         <path
-          d="M12 4.75l2.35 4.77 5.27.77-3.81 3.72.9 5.24L12 16.8l-4.71 2.48.9-5.24-3.81-3.72 5.27-.77L12 4.75Z"
+          d="M4.75 6.75a2 2 0 0 1 2-2h10.5a2 2 0 0 1 2 2v10.5a2 2 0 0 1-2 2H6.75a2 2 0 0 1-2-2V6.75Z"
+          strokeWidth="1.7"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M4.75 14.25l4-4 3 3 2.5-2.5 3 3"
           strokeWidth="1.7"
           strokeLinecap="round"
           strokeLinejoin="round"
