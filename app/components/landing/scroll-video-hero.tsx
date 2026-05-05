@@ -1,24 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 export default function ScrollVideoHero() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const rafRef = useRef<number | null>(null);
-  const tickRef = useRef<(time: number) => void>(() => {});
-  const lastUpdateRef = useRef(0);
-  const [isMobile, setIsMobile] = useState(false);
-
-  const targetTimeRef = useRef(0);
-  const currentTimeRef = useRef(0);
-  const durationRef = useRef(0);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -33,124 +19,14 @@ export default function ScrollVideoHero() {
   );
   const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 767px)");
-    const sync = () => setIsMobile(mediaQuery.matches);
-
-    sync();
-    mediaQuery.addEventListener("change", sync);
-
-    return () => mediaQuery.removeEventListener("change", sync);
-  }, []);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    if (rafRef.current) {
-      cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
-    }
-
-    const syncDuration = () => {
-      durationRef.current = video.duration || 0;
-    };
-
-    video.addEventListener("loadedmetadata", syncDuration);
-
-    // Cached videos can already have metadata before the listener is attached.
-    syncDuration();
-
-    if (isMobile) {
-      targetTimeRef.current = 0;
-      currentTimeRef.current = 0;
-      video.loop = true;
-      video.autoplay = true;
-      video.muted = true;
-      video.currentTime = 0;
-      void video.play().catch(() => {});
-
-      return () => {
-        video.pause();
-        video.removeEventListener("loadedmetadata", syncDuration);
-      };
-    }
-
-    const prime = async () => {
-      try {
-        video.loop = false;
-        video.autoplay = false;
-        video.muted = true;
-        await video.play();
-        video.pause();
-      } catch {}
-    };
-
-    prime();
-
-    const tick = (time: number) => {
-      const videoEl = videoRef.current;
-      if (!videoEl || !durationRef.current) {
-        rafRef.current = null;
-        return;
-      }
-
-      const diff = targetTimeRef.current - currentTimeRef.current;
-      if (Math.abs(diff) < 0.016) {
-        currentTimeRef.current = targetTimeRef.current;
-      } else {
-        const smoothing = Math.abs(diff) > 0.35 ? 0.28 : 0.18;
-        currentTimeRef.current += diff * smoothing;
-      }
-
-      const elapsed = time - lastUpdateRef.current;
-      if (elapsed >= 33 && Math.abs(videoEl.currentTime - currentTimeRef.current) > 0.033) {
-        videoEl.currentTime = currentTimeRef.current;
-        lastUpdateRef.current = time;
-      }
-
-      if (Math.abs(targetTimeRef.current - currentTimeRef.current) > 0.02) {
-        rafRef.current = requestAnimationFrame(tick);
-      } else {
-        rafRef.current = null;
-      }
-    };
-
-    tickRef.current = tick;
-
-    return () => {
-      tickRef.current = () => {};
-      video.removeEventListener("loadedmetadata", syncDuration);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, [isMobile]);
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (isMobile) return;
-    if (!durationRef.current) return;
-    targetTimeRef.current = latest * durationRef.current;
-    if (!rafRef.current) {
-      rafRef.current = requestAnimationFrame(tickRef.current);
-    }
-  });
-
   return (
     <section
       ref={sectionRef}
       className="relative h-[100svh] bg-black sm:h-[235svh] lg:h-[250vh]"
     >
       <div className="relative sticky top-0 h-[100svh] overflow-hidden">
-        <video
-          ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
-          muted
-          playsInline
-          preload="auto"
-          loop={isMobile}
-          autoPlay={isMobile}
-        >
-          <source src="/hero-output-v4.mp4" type="video/mp4" />
-        </video>
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#000000_0%,#080808_45%,#111111_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_20%,rgba(232,165,0,0.18),transparent_38%),radial-gradient(circle_at_82%_84%,rgba(232,165,0,0.1),transparent_42%)]" />
 
         <motion.div
           className="absolute inset-0 bg-black"
@@ -166,12 +42,12 @@ export default function ScrollVideoHero() {
               Amplifica — Audiovisual estratégico
             </span>
             <h1 className="mb-6 mt-4 font-headline text-[2.4rem] font-extrabold leading-[0.92] tracking-[-0.04em] text-white sm:mt-8 sm:text-5xl md:mb-8 md:text-6xl lg:text-[6rem] xl:text-[7.5rem]">
-              Transformando{" "}
+              Transformando
               <span
-                className="text-[var(--accent)] italic"
+                className="block text-[var(--accent)] italic"
                 style={{ fontWeight: 200, fontVariationSettings: '"wght" 200' }}
               >
-                ruído em sinal.
+                ruído em sinal
               </span>
             </h1>
             <div className="mt-6 flex flex-col justify-center gap-3 sm:mt-12 sm:gap-5 md:mt-14 md:flex-row md:gap-6">
