@@ -37,16 +37,25 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-white/8 bg-[rgba(10,10,10,0.62)] px-5 py-4 backdrop-blur-2xl sm:px-8 sm:py-5 lg:px-16">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 sm:gap-6">
-        <a href="#top" className="min-w-0 flex-1 space-y-1 md:flex-none">
-          <Image
-            src="/images/AmplificaTipografiaBranco.webp"
-            alt="Logo da Amplifica"
-            width={180}
-            height={28}
-            priority
-            className="h-auto w-[154px] object-contain opacity-95 sm:w-[180px]"
-            style={{ height: "auto" }}
-          />
+        <a href="#top" className="min-w-0 flex-1 md:flex-none">
+          <div className="flex items-center gap-2.5 sm:gap-3.5">
+            <Image
+              src="/images/AmplificaIconeBranco.webp"
+              alt="Ícone da Amplifica"
+              width={44}
+              height={44}
+              priority
+              className="h-9 w-9 object-contain drop-shadow-[0_0_14px_rgba(232,165,0,0.5)] sm:h-11 sm:w-11"
+            />
+            <Image
+              src="/images/TipografiaAbranco.png"
+              alt="Amplifica"
+              width={180}
+              height={48}
+              priority
+              className="mt-1 h-7 w-auto object-contain opacity-95 sm:h-9"
+            />
+          </div>
         </a>
 
         <nav aria-label="Navegação principal" className="hidden items-center gap-6 lg:flex">
